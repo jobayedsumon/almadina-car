@@ -1,25 +1,25 @@
 $(document).ready(function () {
     "use strict";
 
-	
+
 	/* Preloader Script
     ======================================================*/
-	
+
 	$(".tj-loader").delay(800).slideUp(1600);
 	$(".loader-outer").delay(800).slideUp(1600);
-	
-	
-	
+
+
+
 	/* Sticky Navigation
     ======================================================*/
 	if( $('.tj-nav-row').length ){
 		var stickyNavTop = $('.tj-nav-row').offset().top;
 		var stickyNav = function(){
 			var scrollTop = $(window).scrollTop();
-			if (scrollTop > 500) { 
-				$('.tj-nav-row').addClass('sticky');	
+			if (scrollTop > 500) {
+				$('.tj-nav-row').addClass('sticky');
 			} else {
-				$('.tj-nav-row').removeClass('sticky'); 
+				$('.tj-nav-row').removeClass('sticky');
 			}
 		};
 		stickyNav();
@@ -27,8 +27,8 @@ $(document).ready(function () {
 			stickyNav();
 		});
     }
-	
-	
+
+
 	/* Owl Slider For Partners
     ======================================================*/
     if ($('.partners-list').length) {
@@ -57,7 +57,7 @@ $(document).ready(function () {
             }
         });
     }
-	
+
 	/* Owl Slider For Testimonial 1
     ======================================================*/
 	if ($('#testimonial-slider').length) {
@@ -87,15 +87,15 @@ $(document).ready(function () {
             }
         });
     }
-	
-	
+
+
 	/* Owl Slider For Testimonial 2
     ======================================================*/
 	if ($('#testimonial-slider2').length) {
         $('#testimonial-slider2').owlCarousel({
             loop:true,
             dots: false,
-            nav:false,
+            nav:true,
             navText:'',
             items:1,
             autoplay:true,
@@ -117,8 +117,8 @@ $(document).ready(function () {
             }
         });
     }
-	
-	
+
+
 	/* Owl Slider For Home 2 Cab Slider
     ======================================================*/
 	if ($('#cab-slider').length) {
@@ -149,7 +149,7 @@ $(document).ready(function () {
             }
         });
     }
-	
+
 	/* Prime Cab Blog Slider
     ======================================================*/
     if ($('#blog-slider').length) {
@@ -178,7 +178,7 @@ $(document).ready(function () {
             }
         });
     }
-	
+
 	/* Counter Script
     ======================================================*/
 	if ($('.fact-counter').length) {
@@ -187,7 +187,7 @@ $(document).ready(function () {
 			time: 3000
 		});
 	}
-	
+
 	if ($('.fact-count').length) {
 		$('.fact-count').counterUp({
 			delay: 70,
@@ -200,8 +200,8 @@ $(document).ready(function () {
 			time: 2000
 		});
 	}
-	
-	
+
+
 	/* Car Price Range Filter
     ======================================================*/
 	if($( "#price-range" ).length){
@@ -217,8 +217,8 @@ $(document).ready(function () {
 		$( "#amount" ).val( "$" + $( "#price-range" ).slider( "values", 0 ) +
 		" - $" + $( "#price-range" ).slider( "values", 1 ) );
 	}
-	
-	
+
+
 	/* Owl Slider For Fleet Carousel
     ======================================================*/
 	if ($('#cab-carousel').length) {
@@ -249,8 +249,8 @@ $(document).ready(function () {
             }
         });
     }
-	
-	
+
+
 	/* Cab Filter Isotope Script
     ======================================================*/
 	if ($('.cab-filter').length) {
@@ -262,11 +262,11 @@ $(document).ready(function () {
 					easing: 'linear',
 					queue: false,
 				}
-			});	
+			});
 			$('.cab-filter-nav a').on("click", function(){
 				$('.cab-filter-nav .current').removeClass('current');
 				$(this).addClass('current');
-		 
+
 				var selector = $(this).attr('data-filter');
 				$container.isotope({
 					filter: selector,
@@ -277,10 +277,10 @@ $(document).ready(function () {
 					}
 				 });
 				 return false;
-			}); 
+			});
 		});
 	}
-	
+
 	/* Twitter Feed Script
     ======================================================*/
 	if ($('.tj-tweets').length) {
@@ -292,11 +292,11 @@ $(document).ready(function () {
 			loadingText: 'Loading!'
 		});
 	}
-	
-	
+
+
 	/* Gallery Carousel Script
     ======================================================*/
-		
+
 	if($(".gallery-thumb").length && $(".gallery").length){
 		var right = $(".right-outer");
 		var gal_thumb = $(".gallery-thumb");
@@ -334,7 +334,7 @@ $(document).ready(function () {
 			speed:600,
 			cssEase: 'ease-in-out',
 			asNavFor: gal_thumb,
-		
+
 		});
 		$(".gallery-thumb .item").on("click", function() {
 			var index = $(this).attr("data-slick-index");
@@ -357,8 +357,8 @@ $(document).ready(function () {
 	$(window).on("load",function() {
 		getCarouselHeight();
 	});
-		
-	
+
+
 	/* Contact Form Validation/Ajax Call
     ======================================================*/
 	if ($('#contact-form').length) {
@@ -380,9 +380,9 @@ $(document).ready(function () {
 			},
 			submitHandler: function(form) {
 				$.ajax({
-					type : 'POST', 
-					url : 'contact/contact-form.php', 
-					data  : {		
+					type : 'POST',
+					url : 'contact/contact-form.php',
+					data  : {
 						"formData" : $(form).serialize()
 					},
 					beforeSend: function() {
@@ -404,14 +404,14 @@ $(document).ready(function () {
 						}
 					}
 				});
-				
+
 				return false;
 			}
 		});
-	
+
 	}
-	
-	
+
+
 	/* Contact Form 2 Validation/Ajax Call
     ======================================================*/
 	if ($('#contact-form2').length) {
@@ -431,9 +431,9 @@ $(document).ready(function () {
 			},
 			submitHandler: function(form) {
 				$.ajax({
-					type : 'POST', 
-					url : 'contact/home-form.php', 
-					data  : {		
+					type : 'POST',
+					url : 'contact/home-form.php',
+					data  : {
 						"formData" : $(form).serialize()
 					},
 					beforeSend: function() {
@@ -455,16 +455,16 @@ $(document).ready(function () {
 						}
 					}
 				});
-				
+
 				return false;
 			}
 		});
-	
+
 	}
-	
+
 	/* Mailchimp Script
     ======================================================*/
-	
+
 	$('#newsletter_frm input[name="agree_terms"]').click(function(){
 		if($(this).is(":checked")) {
 			$('#newsletter_frm .btn-submit').removeAttr('disabled');
@@ -472,7 +472,7 @@ $(document).ready(function () {
 			$('#newsletter_frm .btn-submit').attr('disabled',true);
 		}
 	});
-	
+
 	$('#newsletter_frm').on("submit", function(event){
 		//Prevent default form submission
 		event.preventDefault();
@@ -481,10 +481,10 @@ $(document).ready(function () {
 		var emailValid= email_regex.test(emailAdd);
 		if(emailValid){
 			$.ajax({
-				type : 'POST', 
+				type : 'POST',
 				dataType: 'json',
-				url : 'mailchimp/subscribe.php', 
-				data  : {		
+				url : 'mailchimp/subscribe.php',
+				data  : {
 					"email_address" : emailAdd
 				},
 				beforeSend: function() {
@@ -505,7 +505,7 @@ $(document).ready(function () {
 						}else{
 							alert("Request failed please try again!");
 						}
-						
+
 						$('#newsletter_frm')[0].reset();
 					}
 				}
@@ -514,41 +514,41 @@ $(document).ready(function () {
 			alert("Please enter valid email address and try again!");
 			return false;
 		}
-		
+
 	});
-	
+
 	/* Booking Form Script
     ======================================================*/
-	
+
 	var nowDate = new Date();
 	var today = new Date(nowDate.getFullYear(), nowDate.getMonth(), nowDate.getDate(), 0, 0, 0, 0);
-	
+
 	if($('.booking-frm #pickup_date').length){
 		$('.booking-frm #pickup_date').datetimepicker({
 			format: 'MM/DD/YYYY',
 			minDate: today
 		});
 	}
-	
+
 	if($('.booking-frm #pickup_time').length){
 		$('.booking-frm #pickup_time').datetimepicker({
 			format: 'h:mm a',
 		});
 	}
-	
+
 	if($('.booking-frm #dropoff_date').length){
 		$('.booking-frm #dropoff_date').datetimepicker({
 			format: 'MM/DD/YYYY',
 			minDate: today
 		});
 	}
-	
+
 	if($('.booking-frm #dropoff_time').length){
 		$('.booking-frm #dropoff_time').datetimepicker({
 			format: 'h:mm a'
 		});
 	}
-	
+
 	//On Load Condition
 	var service_type = $(".booking-frm input[name='service_type']:checked").val();
 	var booking_ref = Math.floor(Math.random() * 90000) + 10000;
@@ -558,7 +558,7 @@ $(document).ready(function () {
 	if( booking_ref !== null ){
 		$('.booking-summary .book-ref').text(booking_ref);
 	}
-	
+
 	//Display Saved Local Storage Ride Booking Data
 	var book_ref = sessionStorage.getItem('book_ref');
 	var start_loc = sessionStorage.getItem('start_loc');
@@ -570,7 +570,7 @@ $(document).ready(function () {
 	var service_type = sessionStorage.getItem('service_type');
 	var trip_time = sessionStorage.getItem('trip_time');
 	var ride_car = sessionStorage.getItem('selected_car');
-	
+
 	if( ride_car !== null ){
 		$('#car_list option[value="'+ride_car+'"]').attr('selected','selected');
 	}
@@ -585,7 +585,7 @@ $(document).ready(function () {
 			$(".booking-frm #two_way").prop('checked', true);
 		}
 	}
-	
+
 	if( start_loc !== null ){
 		$('.booking-summary .startup_loc').text(start_loc);
 		$('.booking-frm  #point_start_loc').val(start_loc);
@@ -657,7 +657,7 @@ $(document).ready(function () {
 			}
 		}
 	});
-	
+
 	if($('#ride-bform').length){
 		$('#ride-bform').validate({
 			rules: {
@@ -725,12 +725,12 @@ $(document).ready(function () {
 						return false;
 					}
 				}
-				
+
 			}
 		});
 	}
-	
-	
+
+
 	if($('#rider-info').length){
 		$('#rider-info').validate({
 			rules: {
@@ -755,12 +755,12 @@ $(document).ready(function () {
 				var service_type = sessionStorage.getItem('service_type');
 				var trip_time = sessionStorage.getItem('trip_time');
 				var ride_car = sessionStorage.getItem('selected_car');
-				
+
 				if(start_loc !== null && end_loc !== null && pickup_date !== null && pickup_time !== null && dropoff_date !== null && dropoff_time !== null && service_type !== null && ride_car !== null){
 					$.ajax({
-						type : 'POST', 
-						url : 'contact/ride-booking.php', 
-						data  : {		
+						type : 'POST',
+						url : 'contact/ride-booking.php',
+						data  : {
 							"formData" : $(form).serialize(),
 							"book_ref" : book_ref,
 							"start_loc" : start_loc,
@@ -785,18 +785,18 @@ $(document).ready(function () {
 								$("#ride-bbtn").removeClass('wait');
 								$('#rider-info')[0].reset();
 								//Delete Booking Saved Data From Local Storage
-								sessionStorage.removeItem("book_ref"); 
-								sessionStorage.removeItem("start_loc"); 
-								sessionStorage.removeItem("end_loc"); 
-								sessionStorage.removeItem("pickup_date"); 
-								sessionStorage.removeItem("pickup_time"); 
-								sessionStorage.removeItem("dropoff_date"); 
-								sessionStorage.removeItem("dropoff_date"); 
-								sessionStorage.removeItem("dropoff_time"); 
-								sessionStorage.removeItem("service_type"); 
-								sessionStorage.removeItem("trip_time"); 
-								sessionStorage.removeItem("selected_car"); 
-								
+								sessionStorage.removeItem("book_ref");
+								sessionStorage.removeItem("start_loc");
+								sessionStorage.removeItem("end_loc");
+								sessionStorage.removeItem("pickup_date");
+								sessionStorage.removeItem("pickup_time");
+								sessionStorage.removeItem("dropoff_date");
+								sessionStorage.removeItem("dropoff_date");
+								sessionStorage.removeItem("dropoff_time");
+								sessionStorage.removeItem("service_type");
+								sessionStorage.removeItem("trip_time");
+								sessionStorage.removeItem("selected_car");
+
 								$('.booking-summary .book-ref').text('Not Available');
 								$('.booking-summary .service_type').text('Not Available');
 								$('.booking-summary .startup_loc').text('Not Available');
@@ -820,5 +820,5 @@ $(document).ready(function () {
 			}
 		});
 	}
-	
+
 });

@@ -78,7 +78,7 @@ h1,h2,h3,h4,h5,h6{
 	width:100%;
 	float:left;
 	position:relative;
-	padding:5px 0 33px;
+	/*padding:5px 0 33px;*/
 }
 .tj-logo h1 a{
 	font-family:'Yellowtail', sans-serif;
@@ -360,7 +360,7 @@ h1,h2,h3,h4,h5,h6{
 }
 /* End Header CSS Styles */
 
-/* 01. Inner Banner */
+ /*01. Inner Banner */
 .tj-inner-banner {
     float: left;
     width: 100%;
@@ -424,7 +424,7 @@ h1,h2,h3,h4,h5,h6{
 .tj-banner-form{
 	float:left;
 	width:100%;
-	background:url("../images/banner1_bg.png") no-repeat;
+	/*background:url("../images/banner1_bg.png") no-repeat;*/
 	background-size:cover;
 	padding:195px 0;
 	position:relative;
@@ -768,7 +768,7 @@ h1,h2,h3,h4,h5,h6{
 }
 .fleet-carousel .tj-heading-style h3:after{
 	content:'';
-	background:url("../images/deal-hstyle-bg.png") no-repeat;
+	/*background:url("../images/deal-hstyle-bg.png") no-repeat;*/
 	display:block;
 	height: 22px;
 	width: 43px;
