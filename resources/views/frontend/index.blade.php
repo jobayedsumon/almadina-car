@@ -34,6 +34,24 @@
             @include('frontend.testimonials')
             <!--Customers Section End-->
 
+            <section class="tj-cal-to-action2" style="background: url('{{ asset("frontend/images/cta-bg2.jpg") }}') no-repeat center center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9 col-sm-9">
+                            <div class="cta-tagline">
+                                <h2>Incredible Destinations at Incredible Deals</h2>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-3">
+                            <div class="cta-btn">
+                                <a href="booking-form.html">Book Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
         @include('frontend.layout.footer')
 
 

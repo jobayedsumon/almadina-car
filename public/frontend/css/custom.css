@@ -1,1 +1,32 @@
-
+/* Equal Heights for OwlCarousel 2 */
+.owl-carousel .owl-stage {
+    display: -webkit-box;
+    display: flex;
+}
+.owl-carousel .owl-item {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-flex: 1;
+    flex: 1 0 auto;
+}
+.owl-carousel .caption {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-flex: 1;
+    flex: 1 0 auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
+.owl-carousel .flex-text {
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+}
+.owl-carousel .thumbnail {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    margin: 0 15px;
+}

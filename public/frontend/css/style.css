@@ -328,10 +328,10 @@ h1,h2,h3,h4,h5,h6{
 /* End Sticky Navigation CSS */
 
 .tj-nav-holder .dropdown-menu > li a:before{
-	font-family: 'Font Awesome 5 Free';
-	content: '\f111';
-	font-size:10px;
-	margin-right:10px;
+	/*font-family: 'Font Awesome 5 Free';*/
+	/*content: '\f111';*/
+	/*font-size:10px;*/
+	/*margin-right:10px;*/
 }
 .tj-nav-holder .navbar-default .navbar-nav .dropdown-menu > li > a{
 	color:#444444;
@@ -652,7 +652,7 @@ h1,h2,h3,h4,h5,h6{
 .tj-cal-to-action2{
 	float:left;
 	width:100%;
-	background:url("../images/cta-bg2.png")no-repeat center center;
+	/*background:url("../storage/images/cta-bg2.png")no-repeat center center;*/
 	background-size:cover;
 	position:relative;
 	padding:70px 0;
@@ -977,6 +977,8 @@ h1,h2,h3,h4,h5,h6{
 	padding:30px 0;
 	height:125px;
 	overflow:hidden;
+    display: flex;
+    justify-content: center;
 }
 .cab-service-box .service-thumb:hover img,
 .news-outer figure:hover img{
@@ -3115,6 +3117,7 @@ h1,h2,h3,h4,h5,h6{
 	position:relative;
 	float: left;
 	overflow: hidden;
+    width: 50%;
 }
 .fleet-grid-box .fleet-thumb:after,
 .fleet-list-box .fleet-thumb:after{

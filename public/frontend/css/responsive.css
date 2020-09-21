@@ -5,7 +5,7 @@
 
 
 @media (min-width: 1920px){
-	
+
 	.slide-item .slide-caption{
 		bottom:380px;
 	}
@@ -17,7 +17,7 @@
 		font-size:52px;
 		line-height:62px;
 	}
-	
+
 }
 
 /* Responsive CSS For Gallery Carousel */
@@ -39,9 +39,9 @@
 	}
 }
 @media(min-width:992px) and (max-width:1024px){
-	
+
 	/*Header Styles */
-	
+
 	.info_box i{
 		font-size: 18px;
 		width: 40px;
@@ -60,13 +60,13 @@
 		padding:0;
 	}
 	/* End Header Styles */
-	
+
 	/* Inner Banner Styles */
 	.tj-inner-banner h2{
 		padding:100px 0 100px;
 	}
 	/* End Inner Banner Styles */
-	
+
 	/* Homepage 1 Styles */
 	.trip-type-tabs .nav-tabs li a{
 		padding:15px 25px;
@@ -112,7 +112,7 @@
 		height:auto;
 	}
 	/*End Homepage 1 Styles*/
-	
+
 	/* Homepage 2 Styles*/
 	.slide-item .slide-caption h2{
 		font-size:40px;
@@ -145,9 +145,9 @@
 		right: 12px;
 	}
 	/* End Homepage 2 Styles*/
-	
+
 	/* Homepage 3 Styles*/
-	
+
 	.cab-box figure img{
 		width:100%;
 		height:auto;
@@ -180,7 +180,7 @@
 		margin-left:0;
 	}
 	/* End Homepage 3 Styles*/
-	
+
 	/* Booking Form 3 Styles */
 	.booking-summary .journey-info{
 		width:290px;
@@ -192,14 +192,14 @@
 		width:auto;
 	}
 	/* End Booking Form 3 Styles */
-	
+
 	/* Contact Styles*/
 	.address-box{
 		width:100%;
 		margin:60px 0 0 0;
 	}
 	/* End Contact Styles*/
-	
+
 	.text-box .service-list, .text-box .feature-list{
 		width:330px;
 	}
@@ -230,12 +230,12 @@
 		border-left:1px solid #eaeaea;
 		border-top:transparent;
 	}
-	
+
 
 }
 
 @media(min-width:768px) and (max-width:991px){
-	
+
 	/* Header Styles */
 	.phone_info{
 		display:none;
@@ -259,13 +259,13 @@
 		font-size: 13px;
 	}
 	/* End Header Styles */
-	
+
 	/* Inner Banner Styles */
 	.tj-inner-banner h2{
 		padding:100px 0 100px;
 	}
 	/* End Inner Banner Styles */
-	
+
 	/* Homepage 1 Styles */
 	.tj-banner-form .banner-caption{
 		padding-top:0;
@@ -313,7 +313,7 @@
 		height:auto;
 	}
 	/* End Homepage 1 Styles */
-	
+
 	/* Homepage 2 Styles */
 	.fleet-box .ad-info{
 		padding: 10px 20px;
@@ -390,7 +390,7 @@
 		right:10px;
 	}
 	/* End Homepage 2 Styles */
-	
+
 	/* Homepage 3 Styles */
 	.tj-facts2 .fact-outer{
 		width:auto;
@@ -475,7 +475,7 @@
 		font-size:12px;
 	}
 	/* End Homepage 3 Styles */
-	
+
 	/* About Us Styles */
 	.tj-aboutus .about-info{
 		padding:90px 0 0;
@@ -493,7 +493,7 @@
 		padding: 0 40px 45px 40px;
 	}
 	/* End About Us Styles */
-	
+
 	/* Register And Login Styles */
 	.reg-cta{
 		padding-left:0;
@@ -504,7 +504,7 @@
 		padding:90px 0 30px;
 	}
 	/* End Register And Login Styles */
-	
+
 	/* Booking Form Styles */
 	.tj-booking-frm .booking-frm{
 		padding: 45px 25px;
@@ -546,14 +546,14 @@
 		margin:0 20px 35px 20px;
 	}
 	/* End Booking Form Styles */
-	
+
 	/* Contact Us Styles */
 	.address-box{
 		width:100%;
 		margin: 60px 0 0 0;
 	}
 	/* End Contact Us Styles */
-	
+
 	/* Fleet Grid And List Styles */
 	.car-filter .select-list{
 		font-size: 13px;
@@ -590,7 +590,7 @@
 		border-top:transparent;
 	}
 	/* End Fleet Grid And List Styles */
-	
+
 	.fleet-features{
 		padding:30px 18px;
 	}
@@ -615,7 +615,7 @@
 	.text-box .service-list, .text-box .feature-list{
 		width:100%;
 	}
-	
+
 	/* Payment Styles */
 	.payment-frm .back-btn,.payment-frm .book-btn,
 	.cb-frm .back-btn,.cb-frm .book-btn{
@@ -627,7 +627,7 @@
 	.success-msg{
 		padding:60px 50px;
 	}
-	
+
 	/* User Account Styles */
 	.tj-account-frm .tj-tabs .nav > li{
 		float:none;
@@ -635,7 +635,7 @@
 	.tj-account-frm .tj-tabs .nav > li > a{
 		width:100%;
 	}
-	
+
 	/* Blog Detail Styles */
 	.sharing_links li a{
 		margin: 0 0 10px;
@@ -676,7 +676,7 @@
 }
 
 @media(max-width:767px){
-	
+
 	/* Header Styles */
 	.tj-logo{
 		padding: 25px 0 15px;
@@ -743,7 +743,7 @@
 		padding:17px 0 17px 0;
 		border-top:none;
 	}
-	
+
 	.tj-nav-holder .navbar-nav{
 		margin:0;
 	}
@@ -776,7 +776,7 @@
 		padding:0;
 	}
 	/* End Header Styles */
-	
+
 	/*Inner Banner Styles */
 	.tj-inner-banner h2{
 		padding:60px 0;
@@ -785,7 +785,7 @@
 		font-size:30px;
 	}
 	/* End Inner Banner Styles */
-	
+
 	/* Contact Styles */
 	.tj-contact-section .tj-heading-style h3{
 		font-size:28px;
@@ -809,7 +809,7 @@
 		margin-left:0;
 	}
 	/* End Contact Styles */
-	
+
 	/* 404 Styles */
 	.tj-p404-section h2{
 		margin:0;
@@ -821,7 +821,7 @@
 		font-size:90px;
 	}
 	/* End 404 Styles */
-	
+
 	/* Register Styles */
 	.tj-tabs .nav > li > a{
 		padding:20px 25px 15px 25px;
@@ -845,11 +845,11 @@
 		float:left;
 	} */
 	/* End Register Styes */
-	
+
 	.tj-app .tj-heading-style h3{
 		font-size:30px;
 	}
-	
+
 	/* FAQ Styles */
 	.outer-circle {
 		border-radius: 0;
@@ -892,7 +892,7 @@
 		font-size:18px;
 	}
 	/* End FAQ Styles */
-	
+
 	/* Booking Form Styles */
 	.tj-booking-frm .tj-tabs .nav-tabs > li{
 		float:none;
@@ -928,7 +928,7 @@
 		margin:0 20px 35px 20px;
 	}
 	/* End Booking Form Styles */
-	
+
 	/* Fleet Grid Styles */
 	.car-fleet .result-count{
 		width:auto;
@@ -958,7 +958,7 @@
 		float:none;
 	}
 	/* End Fleet Grid Styles */
-	
+
 	/* Fleet List Styles */
 	.fleet-list-box img{
 		width:100%;
@@ -969,7 +969,7 @@
 		border-top:transparent;
 	}
 	/* End Fleet List Styles */
-	
+
 	/* Fleet Detail Styles */
 	.book_fleet a{
 		margin:15px 0 0;
@@ -986,7 +986,7 @@
 	.text-box .feature-list{
 		margin-left:0;
 	}
-	.text-box .service-list, 
+	.text-box .service-list,
 	.text-box .feature-list{
 		width:auto;
 	}
@@ -994,7 +994,7 @@
 		left:43%;
 	}
 	/* End Fleet Detail Styles */
-	
+
 	/* Services Styles */
 	.cab-services .tj-heading-style{
 		width:auto;
@@ -1003,7 +1003,7 @@
 		font-size:28px;
 	}
 	/* End Services Styles */
-	
+
 	/* About Styles */
 	.about-info .tj-heading-style h3,
 	.tj-reviews .tj-heading-style h3,
@@ -1049,9 +1049,9 @@
 		height:auto;
 	}
 	/* End About Styles */
-	
+
 	/* Homepage 1 Styles */
-	
+
 	.tj-banner-form{
 		padding:150px 0;
 	}
@@ -1128,9 +1128,9 @@
 		margin-bottom:20px;
 	}
 	/* End Homepage 1 Styles */
-	
+
 	/* Homepage 2 Styles */
-	
+
 	.tj-facts .tj-heading-style h3,
 	.tj-cab-collection .tj-heading-style h3,
 	.tj-promo-offer h3,.tj-services .tj-heading-style h3,
@@ -1223,7 +1223,7 @@
 		width:auto;
 	}
 	/* End Homepage 2 Styles */
-	
+
 	.tj-banner .banner-caption{
 		width:auto;
 	}
@@ -1299,9 +1299,9 @@
 	.tj-footer2 .copyright_text p{
 		text-align:center;
 	}
-	
+
 	/* Payment Styles */
-	
+
 	.tj-payment .tab-content,
 	.tj-user-bfrm .tab-content{
 		padding:50px 25px;
@@ -1323,9 +1323,9 @@
 	.success-msg{
 		padding:50px 50px;
 	}
-	
+
 	/* User Account Styles */
-	
+
 	.tj-account-frm .tab-content{
 		padding:55px 20px
 	}
@@ -1345,9 +1345,9 @@
 		margin-top:20px;
 		width:100%;
 	}
-	
+
 	/* End User Account Styles */
-	
+
 	/* Blog Styles */
 	.tj-cab-collection .tj-heading-style,
 	.tj-news .tj-heading-style {
@@ -1368,7 +1368,7 @@
 		font-size:40px;
 	}
 	/* End Blog Styles */
-	
+
 	/* Blog Detail Styles */
 	.blog-outer h3{
 		font-size:26px;
@@ -1422,7 +1422,7 @@
 		font-size: 12px;
 	}
 	/* End Blog Detail Styles */
-	
+
 	/* Footer Styles */
 	.tj-copyright p{
 		float:none;
@@ -1434,8 +1434,8 @@
 		float:none;
 	}
 	/* End Footer Styles */
-	
-	
+
+
 }
 
 /* Responsive CSS For Gallery Carousel */
