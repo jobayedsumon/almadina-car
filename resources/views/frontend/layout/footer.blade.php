@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="about-widget widget">
-                    <h3>About PrimeCab</h3>
+                    <h3>About Al Madina</h3>
                     <p>Search for will uncover many web sites variables onto of passages of lorem ipsum available but the majority the words all predefined humour to met chunks recently with desktop.</p>
                     <ul class="fsocial-links">
                         <li><a href="http://www.facebook.com"><i class="fab fa-facebook-f"></i></a></li>

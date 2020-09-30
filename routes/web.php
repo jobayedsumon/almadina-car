@@ -13,34 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.index');
-});
+//FRONTEND ROUTS
 
-Route::get('/login', function () {
-    return view('frontend.customer.login');
-});
+Route::get('/', 'Frontend\FrontendController@index');
 
-Route::get('/user-account', function () {
-    return view('frontend.customer.user-account');
-});
+Route::get('/login', 'Frontend\FrontendController@login');
 
-Route::get('/booking-form', function () {
-    return view('frontend.booking.booking-form');
-});
+Route::get('/user-account', 'Frontend\FrontendController@user_account');
 
-Route::get('/confirm-booking', function () {
-    return view('frontend.booking.confirm-booking');
-});
+Route::get('/booking-form', 'Frontend\FrontendController@booking_form');
 
-Route::get('/booking-confirmation', function () {
-    return view('frontend.booking.booking-confirmation');
-});
+Route::get('/confirm-booking', 'Frontend\FrontendController@confirm_booking');
 
-Route::get('/car-list', function () {
-    return view('frontend.car.car-list');
-});
+Route::get('/booking-confirmation', 'Frontend\FrontendController@booking_confirmation');
 
-Route::get('/car-details', function () {
-    return view('frontend.car.car-details');
-});
+Route::get('/car-list', 'Frontend\FrontendController@car_list');
+
+Route::get('/car-details', 'Frontend\FrontendController@car_details');
