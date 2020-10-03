@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use TCG\Voyager\Models\Category;
+use TCG\Voyager\Models\Page;
 
 class FrontendController extends Controller
 {
@@ -11,6 +13,15 @@ class FrontendController extends Controller
     public function index()
     {
         return view('frontend.index');
+    }
+
+    public function page($slug)
+    {
+        $page = Page::where('slug', $slug)->first();
+
+        dd($page);
+
+        return view();
     }
 
     public function login()
@@ -38,9 +49,10 @@ class FrontendController extends Controller
         return view('frontend.booking.booking-confirmation');
     }
 
-    public function car_list()
+    public function car_list($slug)
     {
-        return view('frontend.car.car-list');
+        $category = Category::where('slug', $slug)->first();
+        return view('frontend.car.car-list', compact('category'));
     }
 
     public function car_details()

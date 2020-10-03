@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'Frontend\FrontendController@index');
 
+Route::get('/page/{slug}', 'Frontend\FrontendController@page')->name('page');
+
 Route::get('/login', 'Frontend\FrontendController@login');
 
 Route::get('/user-account', 'Frontend\FrontendController@user_account');
@@ -27,6 +29,11 @@ Route::get('/confirm-booking', 'Frontend\FrontendController@confirm_booking');
 
 Route::get('/booking-confirmation', 'Frontend\FrontendController@booking_confirmation');
 
-Route::get('/car-list', 'Frontend\FrontendController@car_list');
+Route::get('/car-list/{slug}', 'Frontend\FrontendController@car_list')->name('car-list');
 
 Route::get('/car-details', 'Frontend\FrontendController@car_details');
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});

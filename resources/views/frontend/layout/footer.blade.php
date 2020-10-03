@@ -24,11 +24,11 @@
                 <div class="links-widget widget">
                     <h3>Our Policies</h3>
                     <ul class="flinks-list">
-                        <li><i class="fas fa-folder"></i><a href="">Privacy Policy</a></li>
-                        <li><i class="fas fa-folder"></i><a href="">Terms & Conditions</a></li>
-                        <li><i class="fas fa-folder"></i><a href="">Cancellation</a></li>
-                        <li><i class="fas fa-folder"></i><a href="">Contact Us</a></li>
-                        <li><i class="fas fa-folder"></i><a href="">About Us</a></li>
+                        <li><i class="fas fa-folder"></i><a href="{{ route('page', 'privacy-policy') }}">Privacy Policy</a></li>
+                        <li><i class="fas fa-folder"></i><a href="{{ route('page', 'terms-conditions') }}">Terms & Conditions</a></li>
+                        <li><i class="fas fa-folder"></i><a href="{{ route('page', 'cancellation') }}">Cancellation</a></li>
+                        <li><i class="fas fa-folder"></i><a href="{{ route('page', 'contact-us') }}">Contact Us</a></li>
+                        <li><i class="fas fa-folder"></i><a href="{{ route('page', 'about-us') }}">About Us</a></li>
                     </ul>
                 </div>
             </div>
@@ -69,7 +69,7 @@
                         </li>
                         <li>
                             <i class="fas fa-globe-asia"></i>
-                            <a href="www.almadina.com">www.almadina.com</a>
+                            <a href="/">www.almadina.com</a>
                         </li>
                     </ul>
                 </div>
@@ -86,7 +86,7 @@
                 <p>&copy; Copyrights {{ date('Y') }} <a href="/">Al Madina</a>. All Rights Reserved.</p>
             </div>
             <div class="col-md-6 col-sm-6">
-                <p><a href="">Disclaimer</a> | Developed by <a href="https://vmsl.com.bd">VMSL</a>.</p>
+                <p><a href="{{ route('page', 'disclaimer') }}">Disclaimer</a> | Developed by <a href="https://vmsl.com.bd">VMSL</a>.</p>
             </div>
         </div>
     </div>

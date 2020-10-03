@@ -42,7 +42,7 @@
                             <ul class="nav navbar-nav">
                                 <li> <a href="/" aria-haspopup="true" aria-expanded="false">HOME</a></li>
                                 <li>
-                                    <a href="aboutus.html">ABOUT US</a>
+                                    <a href="{{ route('page', 'about-us') }}">ABOUT US</a>
                                 </li>
                                 <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">OUR SERVICES<i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                     <ul class="dropdown-menu">
@@ -56,11 +56,10 @@
                                 </li>
                                 <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">OUR CARS<i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="fleet-grid.html">SUV</a></li>
-                                        <li><a href="fleet-list.html">BMW</a></li>
-                                        <li><a href="fleet-detail.html">TOYOTA</a></li>
-                                        <li><a href="fleet-detail.html">ALLION</a></li>
-                                        <li><a href="fleet-detail.html">LAND CRUISER</a></li>
+                                        @forelse(\TCG\Voyager\Models\Category::all() as $category)
+                                        <li><a href="{{ route('car-list', $category->slug) }}">{{ $category->name }}</a></li>
+                                        @empty
+                                        @endforelse
                                     </ul>
                                 </li>
                                 <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ACCOUNT<i class="fa fa-angle-down" aria-hidden="true"></i></a>
@@ -72,7 +71,7 @@
                                 </li>
 
                                 <li>
-                                    <a href="contact.html">CONTACT US</a>
+                                    <a href="{{ route('page', 'contact-us') }}">CONTACT US</a>
                                 </li>
 
                             </ul>

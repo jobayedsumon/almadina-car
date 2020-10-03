@@ -10,9 +10,9 @@
     <!--Header END-->
 
     <!--Inner Banner Section Start-->
-    <div class="tj-inner-banner" style="background: url('{{ asset("storage/images/inner-banner.jpg") }}') top center no-repeat">
+    <div class="tj-inner-banner" style="background: url('{{ asset($category->image) }}') top center no-repeat; background-size: cover">
         <div class="container">
-            <h2>Car Fleet List</h2>
+            <h2>{{ $category->name }}</h2>
         </div>
     </div>
     <!--Inner Banner Section End-->
@@ -22,7 +22,7 @@
         <div class="container">
             <ul class="breadcrumb-list">
                 <li><a href="/">Home</a></li>
-                <li class="active">Car Fleet List</li>
+                <li class="active">{{ $category->name }}</li>
             </ul>
         </div>
     </div>
