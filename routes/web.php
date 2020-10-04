@@ -31,7 +31,7 @@ Route::get('/booking-confirmation', 'Frontend\FrontendController@booking_confirm
 
 Route::get('/car-list/{slug}', 'Frontend\FrontendController@car_list')->name('car-list');
 
-Route::get('/car-details', 'Frontend\FrontendController@car_details');
+Route::get('/car-details/{slug}', 'Frontend\FrontendController@car_details')->name('car-details');
 
 
 Route::group(['prefix' => 'admin'], function () {

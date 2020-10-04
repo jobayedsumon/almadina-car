@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Car;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use TCG\Voyager\Models\Category;
@@ -52,11 +53,13 @@ class FrontendController extends Controller
     public function car_list($slug)
     {
         $category = Category::where('slug', $slug)->first();
-        return view('frontend.car.car-list', compact('category'));
+        $cars = $category->cars()->paginate(5);
+        return view('frontend.car.car-list', compact('category', 'cars'));
     }
 
-    public function car_details()
+    public function car_details($slug)
     {
-        return view('frontend.car.car-details');
+        $car = Car::where('slug', $slug)->first();
+        return view('frontend.car.car-details', compact('car'));
     }
 }

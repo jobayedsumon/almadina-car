@@ -30,3 +30,15 @@
     flex-direction: column;
     margin: 0 15px;
 }
+
+.car_name a {
+    border: 0;
+    padding: 0;
+    display: contents;
+    font-size: 26px;
+    color: black;
+}
+
+.car_name a:hover {
+    color: red;
+}

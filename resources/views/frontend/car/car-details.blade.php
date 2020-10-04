@@ -9,9 +9,9 @@
     @include('frontend.layout.header')
 
     <!--Inner Banner Section Start-->
-    <div class="tj-inner-banner" style="background: url('{{ asset("storage/images/inner-banner.jpg") }}') top center no-repeat">
+    <div class="tj-inner-banner" style="background: url('{{ asset(json_decode($car->images)[0]) }}') top center no-repeat; background-size: cover">
         <div class="container">
-            <h2>Jaguar J10 Pepe</h2>
+            <h2>{{ $car->name }}</h2>
         </div>
     </div>
     <!--Inner Banner Section End-->

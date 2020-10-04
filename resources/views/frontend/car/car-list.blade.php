@@ -50,23 +50,7 @@
                     </div>
                     <div class="car-filter-holder">
                         <div class="row">
-                            <!--Fleet Categories Column Start-->
-{{--                            <div class="col-md-3 col-sm-3">--}}
-{{--                                <div class="car-filter">--}}
-{{--                                    <span>By Categories</span>--}}
-{{--                                    <div class="select-list">--}}
-{{--                                        <select name="car-category" class="selectpicker">--}}
-{{--                                            <option>Select a Category</option>--}}
-{{--                                            <option value="coupe">Coupe</option>--}}
-{{--                                            <option value="crossover">Crossover</option>--}}
-{{--                                            <option value="suv">SUV</option>--}}
-{{--                                            <option value="mpv">MPV</option>--}}
-{{--                                        </select>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-                            <!--Fleet Categories Column End-->
-                            <!--Fleet Brand Column Start-->
+
                             <div class="col-4 col-sm-3">
                                 <div class="car-filter">
                                     <span>By Brand</span>
@@ -126,175 +110,58 @@
                             <!--Fleet List Box Wrapper Start-->
                             <div class="fleet-list">
                                 <div class="row">
-                                    <!--Fleet List Box Start-->
-                                    <div class="col-md-12 col-sm-12">
-                                        <div class="fleet-list-box">
-                                            <!--Fleet List Thumb Start-->
-                                            <figure class="fleet-thumb">
-                                                <img src="{{ asset('storage/images/fleet-gallery1.jpg') }}" alt=""/>
-                                            </figure>
-                                            <!--Fleet List Thumb End-->
-                                            <!--Fleet List Text Start-->
-                                            <div class="fleet-text">
-                                                <div class="price-box">
-                                                    <span class="rated">Top Rated</span>
-                                                    <strong>BDT 1900 <span>/ day</span></strong>
-                                                </div>
-                                                <h3>2017 Chevrolet Pepe</h3>
-                                                <ul class="fleet-meta">
-                                                    <li><i class="fas fa-taxi"></i>Luxery</li>
-                                                    <li><i class="fas fa-user-circle"></i>2 Passengers</li>
-                                                    <li><i class="fas fa-tachometer-alt"></i>5.6/100 MPG</li>
-                                                    <li><i class="fas fa-briefcase"></i>Max 2 Luggage</li>
-                                                </ul>
-                                                <span class="fas fa-star"></span>
-                                                <span class="fas fa-star"></span>
-                                                <span class="fas fa-star"></span>
-                                                <span class="fas fa-star"></span>
-                                                <span class="fas fa-star"></span>
-                                                <p>Lorem Ipsum passages, and more recently with desktop publishing soft like aldus pageMaker including versions.</p>
-                                                <a href="booking-form.html" class="tj-btn">Book Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
-                                            </div>
-                                            <!--Fleet List Text Start-->
-                                        </div>
-                                    </div>
-                                    <!--Fleet List Box End-->
 
-                                    <!--Fleet List Box Start-->
-                                    <div class="col-md-12 col-sm-12">
-                                        <div class="fleet-list-box">
-                                            <!--Fleet List Thumb Start-->
-                                            <figure class="fleet-thumb">
-                                                <img src="{{ asset('storage/images/fleet-gallery1.jpg') }}" alt=""/>
-                                            </figure>
-                                            <!--Fleet List Thumb End-->
-                                            <!--Fleet List Text Start-->
-                                            <div class="fleet-text">
-                                                <div class="price-box">
-                                                    <span class="rated">Top Rated</span>
-                                                    <strong>BDT 2400 <span>/ day</span></strong>
-                                                </div>
-                                                <h3>Nissan Vela 201</h3>
-                                                <ul class="fleet-meta">
-                                                    <li><i class="fas fa-taxi"></i>Luxery</li>
-                                                    <li><i class="fas fa-user-circle"></i>2 Passengers</li>
-                                                    <li><i class="fas fa-tachometer-alt"></i>5.6/100 MPG</li>
-                                                    <li><i class="fas fa-briefcase"></i>Max 2 Luggage</li>
-                                                </ul>
-                                                <span class="fas fa-star"></span>
-                                                <span class="fas fa-star"></span>
-                                                <span class="fas fa-star"></span>
-                                                <span class="fas fa-star"></span>
-                                                <span class="fas fa-star"></span>
-                                                <p>Lorem Ipsum passages, and more recently with desktop publishing soft like aldus pageMaker including versions.</p>
-                                                <a href="booking-form.html" class="tj-btn">Book Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
-                                            </div>
-                                            <!--Fleet List Text End-->
-                                        </div>
-                                    </div>
-                                    <!--Fleet List Box End-->
+                                    @forelse($cars as $car)
+                                        <!--Fleet List Box Start-->
+                                            <div class="col-md-12 col-sm-12">
+                                                <div class="fleet-list-box">
+                                                    <!--Fleet List Thumb Start-->
+                                                    <figure class="fleet-thumb">
+                                                        <a href="{{ route('car-details', $car->slug) }}">
+                                                            <img src="{{ asset(json_decode($car->images)[0]) }}" alt=""/>
+                                                        </a>
 
-                                    <!--Fleet List Box Start-->
-                                    <div class="col-md-12 col-sm-12">
-                                        <div class="fleet-list-box">
-                                            <!--Fleet List Thumb Start-->
-                                            <figure class="fleet-thumb">
-                                                <img src="{{ asset('storage/images/fleet-gallery1.jpg') }}" alt=""/>
-                                            </figure>
-                                            <!--Fleet List Thumb End-->
-                                            <!--Fleet List Text Start-->
-                                            <div class="fleet-text">
-                                                <div class="price-box">
-                                                    <span class="rated">Top Rated</span>
-                                                    <strong>BDT 2650 <span>/ day</span></strong>
-                                                </div>
-                                                <h3>Mitshubishi Lander</h3>
-                                                <ul class="fleet-meta">
-                                                    <li><i class="fas fa-taxi"></i>Luxery</li>
-                                                    <li><i class="fas fa-user-circle"></i>5 Passengers</li>
-                                                    <li><i class="fas fa-tachometer-alt"></i>5.6/100 MPG</li>
-                                                    <li><i class="fas fa-briefcase"></i>Max 5 Luggage</li>
-                                                </ul>
-                                                <span class="fas fa-star"></span>
-                                                <span class="fas fa-star"></span>
-                                                <span class="fas fa-star"></span>
-                                                <span class="fas fa-star"></span>
-                                                <span class="fas fa-star"></span>
-                                                <p>Lorem Ipsum passages, and more recently with desktop publishing soft like aldus pageMaker including versions.</p>
-                                                <a href="booking-form.html" class="tj-btn">Book Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
-                                            </div>
-                                            <!--Fleet List Text End-->
-                                        </div>
-                                    </div>
-                                    <!--Fleet List Box End-->
+                                                    </figure>
+                                                    <!--Fleet List Thumb End-->
+                                                    <!--Fleet List Text Start-->
+                                                    <div class="fleet-text">
+                                                        <div class="price-box">
+                                                            <span class="rated">Top Rated</span>
+                                                            <div class="flex flex-col items-end">
+                                                                <strong>BDT {{ $car->hourly_price }} <span>/ hour</span></strong>
+                                                                <strong>BDT {{ $car->daily_price }} <span>/ day</span></strong>
+                                                            </div>
 
-                                    <!--Fleet List Box Start-->
-                                    <div class="col-md-12 col-sm-12">
-                                        <div class="fleet-list-box">
-                                            <!--Fleet List Thumb Start-->
-                                            <figure class="fleet-thumb">
-                                                <img src="{{ asset('storage/images/fleet-gallery1.jpg') }}" alt=""/>
-                                            </figure>
-                                            <!--Fleet List Thumb End-->
-                                            <!--Fleet List Text Start-->
-                                            <div class="fleet-text">
-                                                <div class="price-box">
-                                                    <span class="rated">Top Rated</span>
-                                                    <strong>BDT 2100 <span>/ day</span></strong>
-                                                </div>
-                                                <h3>Mercedes SUV</h3>
-                                                <ul class="fleet-meta">
-                                                    <li><i class="fas fa-taxi"></i>Luxery</li>
-                                                    <li><i class="fas fa-user-circle"></i>9 Passengers</li>
-                                                    <li><i class="fas fa-tachometer-alt"></i>5.6/100 MPG</li>
-                                                    <li><i class="fas fa-briefcase"></i>Max 8 Luggage</li>
-                                                </ul>
-                                                <span class="fas fa-star"></span>
-                                                <span class="fas fa-star"></span>
-                                                <span class="fas fa-star"></span>
-                                                <span class="fas fa-star"></span>
-                                                <span class="fas fa-star"></span>
-                                                <p>Lorem Ipsum passages, and more recently with desktop publishing soft like aldus pageMaker including versions.</p>
-                                                <a href="booking-form.html" class="tj-btn">Book Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
-                                            </div>
-                                            <!--Fleet List Text End-->
-                                        </div>
-                                    </div>
-                                    <!--Fleet List Box End-->
+                                                        </div>
 
-                                    <!--Fleet List Box Start-->
-                                    <div class="col-md-12 col-sm-12">
-                                        <div class="fleet-list-box">
-                                            <!--Fleet List Thumb Start-->
-                                            <figure class="fleet-thumb">
-                                                <img src="{{ asset('storage/images/fleet-gallery1.jpg') }}" alt=""/>
-                                            </figure>
-                                            <!--Fleet List Thumb End-->
-                                            <!--Fleet List Text Start-->
-                                            <div class="fleet-text">
-                                                <div class="price-box">
-                                                    <span class="rated">Top Rated</span>
-                                                    <strong>BDT 1850 <span>/ day</span></strong>
+
+                                                        <div class="car_name">
+                                                            <a href="{{ route('car-details', $car->slug) }}">{{ $car->name }}</a>
+                                                        </div>
+                                                        <ul class="fleet-meta">
+                                                            <li><i class="fas fa-taxi"></i>Luxery</li>
+                                                            <li><i class="fas fa-user-circle"></i>{{ $car->seating_capacity }} Passengers</li>
+                                                            <li style="display: inline-flex" class="items-center">
+                                                                <i class="fas fa-palette "></i>
+                                                                <span class="rounded-full w-8 h-8" style="background-color: {{ $car->color }}; margin: 0"></span>
+                                                            </li>
+                                                            <li><i class="fas fa-briefcase"></i>Max {{ $car->luggage_number }} Luggage</li>
+                                                        </ul>
+                                                        <span class="fas fa-star"></span>
+                                                        <span class="fas fa-star"></span>
+                                                        <span class="fas fa-star"></span>
+                                                        <span class="fas fa-star"></span>
+                                                        <span class="fas fa-star"></span>
+                                                        <p>{{ $car->excerpt }}</p>
+                                                        <a href="booking-form.html" class="tj-btn">Book Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+                                                    </div>
+                                                    <!--Fleet List Text Start-->
                                                 </div>
-                                                <h3>Lexus Sedan L100</h3>
-                                                <ul class="fleet-meta">
-                                                    <li><i class="fas fa-taxi"></i>Luxery</li>
-                                                    <li><i class="fas fa-user-circle"></i>5 Passengers</li>
-                                                    <li><i class="fas fa-tachometer-alt"></i>5.6/100 MPG</li>
-                                                    <li><i class="fas fa-briefcase"></i>Max 4 Luggage</li>
-                                                </ul>
-                                                <span class="fas fa-star"></span>
-                                                <span class="fas fa-star"></span>
-                                                <span class="fas fa-star"></span>
-                                                <span class="fas fa-star"></span>
-                                                <span class="fas fa-star"></span>
-                                                <p>Lorem Ipsum passages, and more recently with desktop publishing soft like aldus pageMaker including versions.</p>
-                                                <a href="booking-form.html" class="tj-btn">Book Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
                                             </div>
-                                            <!--Fleet List Text End-->
-                                        </div>
-                                    </div>
-                                    <!--Fleet List Box End-->
+                                            <!--Fleet List Box End-->
+                                    @empty
+                                    @endforelse
+
                                 </div>
                             </div>
                             <!--Fleet List Box Wrapper End-->
@@ -305,21 +172,8 @@
                     <!--Pagination Section Start-->
                     <div class="pagination-box">
                         <nav aria-label="navigation">
-                            <ul class="pagination">
-                                <li>
-                                    <a href="#" aria-label="Previous">
-                                        <i class="fas fa-angle-double-left"></i>
-                                    </a>
-                                </li>
-                                <li><a href="#">1</a></li>
-                                <li class="active"><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li>
-                                    <a href="#" aria-label="Next">
-                                        <i class="fas fa-angle-double-right"></i>
-                                    </a>
-                                </li>
-                            </ul>
+                            {!! $cars->links() !!}
+
                         </nav>
                     </div>
                     <!--Pagination Section End-->
