@@ -36,12 +36,11 @@
                 <div class="links-widget widget">
                     <h3>Our Services</h3>
                     <ul class="flinks-list">
-                        <li><i class="fas fa-folder"></i><a href="">Restaurants</a></li>
-                        <li><i class="fas fa-folder"></i><a href="">Airports</a></li>
-                        <li><i class="fas fa-folder"></i><a href="">Hospitals</a></li>
-                        <li><i class="fas fa-folder"></i><a href="">Beaches</a></li>
-                        <li><i class="fas fa-folder"></i><a href="">Shopping Malls</a></li>
-                        <li><i class="fas fa-folder"></i><a href="">Wedding Parties</a></li>
+                        @forelse(\App\Service::all() as $service)
+                            <li><i class="fas fa-folder"></i><a href="{{ route('service', $service->slug) }}">{{ $service->name }}</a></li>
+                        @empty
+                        @endforelse
+
                     </ul>
                 </div>
             </div>

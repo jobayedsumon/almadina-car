@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Car;
 use App\Http\Controllers\Controller;
+use App\Service;
 use Illuminate\Http\Request;
 use TCG\Voyager\Models\Category;
 use TCG\Voyager\Models\Page;
@@ -61,5 +62,11 @@ class FrontendController extends Controller
     {
         $car = Car::where('slug', $slug)->first();
         return view('frontend.car.car-details', compact('car'));
+    }
+
+    public function service($slug)
+    {
+        $service = Service::where('slug', $slug)->first();
+        dd($service);
     }
 }

@@ -33,6 +33,8 @@ Route::get('/car-list/{slug}', 'Frontend\FrontendController@car_list')->name('ca
 
 Route::get('/car-details/{slug}', 'Frontend\FrontendController@car_details')->name('car-details');
 
+Route::get('/service/{slug}', 'Frontend\FrontendController@service')->name('service');
+
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

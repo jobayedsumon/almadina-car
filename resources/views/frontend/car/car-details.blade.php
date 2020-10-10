@@ -21,7 +21,7 @@
         <div class="container">
             <ul class="breadcrumb-list">
                 <li><a href="home-1.html">Home</a></li>
-                <li class="active">Car Details</li>
+                <li class="active">{{ $car->name }}</li>
             </ul>
         </div>
     </div>
@@ -35,35 +35,23 @@
                     <div class="gallery-carousel">
                         <div class="left-outer">
                             <div class="gallery">
-                                <div class="item">
-                                    <img src="{{ asset('storage/images/fleet-gallery1.jpg') }}" alt="">
-                                </div>
-                                <div class="item">
-                                    <img src="{{ asset('storage/images/fleet-gallery2.jpg') }}" alt="">
-                                </div>
-                                <div class="item">
-                                    <img src="{{ asset('storage/images/fleet-gallery3.jpg') }}" alt="">
-                                </div>
-                                <div class="item">
-                                    <img src="{{ asset('storage/images/fleet-gallery4.jpg') }}" alt="">
-                                </div>
+                                @forelse(json_decode($car->images) as $image)
+                                    <div class="item">
+                                        <img src="{{ asset($image) }}" alt="">
+                                    </div>
+                                @empty
+                                @endforelse
+
                             </div>
                         </div>
                         <div class="right-outer">
                             <div class="gallery-thumb">
-                                <div class="item">
-                                    <img src="{{ asset('storage/images/fleet-gallery1.jpg') }}" alt="">
-                                </div>
-
-                                <div class="item">
-                                    <img src="{{ asset('storage/images/fleet-gallery2.jpg') }}" alt="">
-                                </div>
-                                <div class="item">
-                                    <img src="{{ asset('storage/images/fleet-gallery3.jpg') }}" alt="">
-                                </div>
-                                <div class="item">
-                                    <img src="{{ asset('storage/images/fleet-gallery4.jpg') }}" alt="">
-                                </div>
+                                @forelse(json_decode($car->images) as $image)
+                                    <div class="item">
+                                        <img src="{{ asset($image) }}" alt="">
+                                    </div>
+                                @empty
+                                @endforelse
                             </div>
                         </div>
                     </div>
@@ -73,11 +61,20 @@
                     <div class="tj-sidebar-outer">
                         <div class="fleet-features widget">
                             <ul>
-                                <li><i class="fas fa-car-alt"></i><span>Car Type :</span> Luxery</li>
-                                <li><i class="fas fa-user-circle"></i><span>Seating :</span> 5 Passengers</li>
-                                <li><i class="fas fa-tachometer-alt"></i><span>Speeding :</span> 5.6/100 MPG</li>
-                                <li><i class="fas fa-briefcase"></i><span>Luggage :</span> Max 5 Case</li>
-                                <li><i class="fas fa-retweet"></i><span>Trips :</span> One Way Trip</li>
+                                <li><i class="fas fa-car-alt"></i><span>Car Type :</span> {{ $car->category->name }}</li>
+                                <li><i class="fas fa-user-circle"></i><span>Seating :</span> {{ $car->seating_capacity }} Passengers</li>
+                                <li><i class="fas fa-air-freshener"></i><span>AC Type :</span> {{ $car->ac_type }}</li>
+                                <li><i class="fas fa-briefcase"></i><span>Luggage :</span> Max {{ $car->luggage_number }} Case</li>
+                                <li><i class="fas fa-retweet"></i><span>Transmission :</span> {{ $car->transmission }}</li>
+                                <li><i class="fas fa-gas-pump"></i><span>Fuel Type :</span> {{ $car->fuel_type }}</li>
+                                <li><i class="fas fa-search-location"></i><span>District :</span> {{ $car->district }}</li>
+                                <li style="display: inline-flex" class="items-center">
+                                    <i class="fas fa-palette "></i>
+                                    <span>Color : &nbsp;</span>
+                                    <span class="rounded-full w-8 h-8" style="background-color: {{ $car->color }}; margin: 0"></span>
+                                </li>
+                                <li><i class="fas fa-money-bill"></i><span>Hourly Price :</span> {{ $car->hourly_price }}</li>
+                                <li><i class="fas fa-money-bill"></i><span>Daily Price :</span> {{ $car->daily_price }}</li>
                             </ul>
                             <div class="book_fleet">
                                 <a href="booking-form.html">Book Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
@@ -89,12 +86,10 @@
                 <div class="col-md-9 col-sm-8">
                     <div class="tj-post-holder">
                         <div class="text-box">
-                            <h3>Jaguar J10 Pepe</h3>
-                            <p>Lorem Ipsum passages, and more recently with desktop publishing software like aldus pageMaker including versions of all the Lorem Ipsum generators on thet Internet tends to repeat predefined chunks as necessary, making this an web evolved over the years, sometimes by accident various versions have evolved over the years, sometimes by accident, sometimes on purpose all the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.</p>
-                            <p>More recently with desktop publishing software like aldus pageMaker including versions of all the Lorem Ipsum generators on thet Internet tends to repeat predefined chunks as necessary, making this an web evolved over the years, sometimes by accident various versions have evolved over the years, sometimes by accident and more recently with desktop publishing software like aldus pageMaker including versions.</p>
+                            <h3>{{ $car->name }}</h3>
+                            {!! $car->body !!}
                             <div class="service-list">
                                 <h3>Our Services</h3>
-                                <p>Various versions have evolved over the years, sometimes by accident, sometimes on purpose all the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.</p>
                                 <ul>
                                     <li><i class="fas fa-check"></i>Point to point service</li>
                                     <li><i class="fas fa-check"></i>Dedicated chauffeur service</li>
@@ -103,23 +98,12 @@
                                     <li><i class="fas fa-check"></i>Point to point service</li>
                                 </ul>
                             </div>
-                            <div class="feature-list">
-                                <h3>Features</h3>
-                                <p>More recently with desktop publishing software like aldus pageMaker including versions of all the Lorem Ipsum and generators on thet Internet tends to repeat predefined  evolved over the years.</p>
-                                <ul>
-                                    <li><i class="fas fa-cog"></i>Automatic stop</li>
-                                    <li><i class="fas fa-cog"></i>Cameras</li>
-                                    <li><i class="fas fa-cog"></i>GPS</li>
-                                    <li><i class="fas fa-cog"></i>Push button shifting</li>
-                                    <li><i class="fas fa-cog"></i>Sensors</li>
-                                </ul>
-                            </div>
                             <div class="video-tour">
                                 <h3>Video Tour</h3>
                                 <figure>
-                                    <img src="https://img.youtube.com/vi/bHWgc5MPnPA/mqdefault.jpg" alt=""/>
+                                    <img src="https://img.youtube.com/vi/{{ $car->youtube_video }}/mqdefault.jpg" alt=""/>
                                     <figcaption class="video-caption">
-                                        <a href="https://www.youtube.com/embed/bHWgc5MPnPA"><i class="fas fa-play"></i></a>
+                                        <a href="https://www.youtube.com/embed/{{ $car->youtube_video }}"><i class="fas fa-play"></i></a>
                                     </figcaption>
                                 </figure>
                             </div>
@@ -131,7 +115,7 @@
                 <div class="row">
                     <div class="col-md-5 col-sm-5 col-xs-5">
                         <div class="prev_link">
-                            <a href="#"><i class="fas fa-angle-double-left"></i> Previous</a>
+                            <a href="{{ route('car-details', $car->previous()->slug) }}"><i class="fas fa-angle-double-left"></i> Previous</a>
                         </div>
                     </div>
                     <div class="col-md-2 col-sm-2 col-xs-2">
@@ -141,7 +125,7 @@
                     </div>
                     <div class="col-md-5 col-sm-5 col-xs-5">
                         <div class="next_link">
-                            <a href="#">Next <i class="fas fa-angle-double-right"></i></a>
+                            <a href="{{ route('car-details', $car->next()->slug) }}">Next <i class="fas fa-angle-double-right"></i></a>
                         </div>
                     </div>
                 </div>

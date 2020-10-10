@@ -46,12 +46,10 @@
                                 </li>
                                 <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">OUR SERVICES<i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="services.html">RESTAURANTS</a></li>
-                                        <li><a href="services.html">AIRPORTS</a></li>
-                                        <li><a href="services.html">HOSPITALS</a></li>
-                                        <li><a href="services.html">BEACHES</a></li>
-                                        <li><a href="services.html">SHOPPING MALLS</a></li>
-                                        <li><a href="services.html">WEDDING PARTIES</a></li>
+                                        @forelse(\App\Service::all() as $service)
+                                        <li><a href="{{ route('service', $service->slug) }}">{{ $service->name }}</a></li>
+                                        @empty
+                                        @endforelse
                                     </ul>
                                 </li>
                                 <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">OUR CARS<i class="fa fa-angle-down" aria-hidden="true"></i></a>
