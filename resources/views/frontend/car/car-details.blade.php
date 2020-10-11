@@ -77,7 +77,7 @@
                                 <li><i class="fas fa-money-bill"></i><span>Daily Price :</span> {{ $car->daily_price }}</li>
                             </ul>
                             <div class="book_fleet">
-                                <a href="booking-form.html">Book Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+                                <a href="{{ route('book', $car->slug) }}">Book Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
                             </div>
                         </div>
 
@@ -115,7 +115,9 @@
                 <div class="row">
                     <div class="col-md-5 col-sm-5 col-xs-5">
                         <div class="prev_link">
+                            @if($car->previous())
                             <a href="{{ route('car-details', $car->previous()->slug) }}"><i class="fas fa-angle-double-left"></i> Previous</a>
+                            @endif
                         </div>
                     </div>
                     <div class="col-md-2 col-sm-2 col-xs-2">
@@ -125,7 +127,9 @@
                     </div>
                     <div class="col-md-5 col-sm-5 col-xs-5">
                         <div class="next_link">
+                            @if($car->next())
                             <a href="{{ route('car-details', $car->next()->slug) }}">Next <i class="fas fa-angle-double-right"></i></a>
+                            @endif
                         </div>
                     </div>
                 </div>

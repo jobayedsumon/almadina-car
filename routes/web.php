@@ -23,10 +23,6 @@ Route::get('/login', 'Frontend\FrontendController@login');
 
 Route::get('/user-account', 'Frontend\FrontendController@user_account');
 
-Route::get('/booking-form', 'Frontend\FrontendController@booking_form');
-
-Route::get('/confirm-booking', 'Frontend\FrontendController@confirm_booking');
-
 Route::get('/booking-confirmation', 'Frontend\FrontendController@booking_confirmation');
 
 Route::get('/car-list/{slug}', 'Frontend\FrontendController@car_list')->name('car-list');
@@ -34,6 +30,10 @@ Route::get('/car-list/{slug}', 'Frontend\FrontendController@car_list')->name('ca
 Route::get('/car-details/{slug}', 'Frontend\FrontendController@car_details')->name('car-details');
 
 Route::get('/service/{slug}', 'Frontend\FrontendController@service')->name('service');
+
+Route::get('/book/{slug}', 'Frontend\BookingController@booking_form')->name('book');
+
+Route::get('/book/confirm-booking', 'Frontend\BookingController@confirm_booking');
 
 
 Route::group(['prefix' => 'admin'], function () {

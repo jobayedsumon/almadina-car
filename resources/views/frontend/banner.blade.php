@@ -1,4 +1,9 @@
-<section class="tj-banner-form" style="background: url('{{ asset('storage/images/NEW 2-4.jpg') }}') no-repeat;">
+@php
+    $files = scandir('storage/banner/main', SCANDIR_SORT_DESCENDING);
+    $newest_file = $files[0];
+    $newest_file = $files[0];
+@endphp
+<section class="tj-banner-form" style="background: url('{{ asset("storage/banner/main/".$newest_file) }}') no-repeat;">
     <div class="container">
         <div class="row">
             <!--Header Banner Caption Content Start-->

@@ -39,7 +39,7 @@
                         </div>
                         <div class="tab-content">
                             <div class="tab-pane active" id="point">
-                                <form class="booking-frm" method="POST" id="ride-bform">
+                                <form class="booking-frm" id="ride-bform">
                                     <div class="col-md-12 col-sm-12">
                                         <div class="field-holder">
                                             <label for="one_way">
@@ -93,10 +93,12 @@
                                             <div class="car-list">
                                                 <select name="car_name" id="car_list" class="selectpicker">
                                                     <option value="">Select Car</option>
-                                                    <option value="Nissan Vela" data-hrrate="30" data-dayrate="150">Nissan Vela</option>
-                                                    <option value="BMW Sedan" data-hrrate="40" data-dayrate="190">BMW Sedan</option>
-                                                    <option value="Mercedes SUV" data-hrrate="65" data-dayrate="200">Mercedes SUV</option>
-                                                    <option value="Renault Sedan" data-hrrate="20" data-dayrate="100">Renault Sedan</option>
+                                                    @forelse(\App\Car::all() as $car)
+                                                    <option {!! $selectedCar ? ( $selectedCar->slug == $car->slug ? 'selected' : '' ) : '' !!} value="{{ $car->name }}"
+                                                            data-hrrate="{{ $car->hourly_price }}" data-dayrate="{{ $car->daily_price }}">
+                                                        {{ $car->name }}</option>
+                                                    @empty
+                                                    @endforelse
                                                 </select>
                                             </div>
                                         </div>

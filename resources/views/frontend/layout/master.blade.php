@@ -37,6 +37,9 @@
 <script src="{{ asset('frontend/js/jquery-1.12.5.min.js') }}"></script>
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <script src="{{ asset('frontend/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('frontend/js/moment.js') }}"></script>
+<script src="{{ asset('frontend/js/bootstrap-datetimepicker.min.js') }}"></script>
+<script src="{{ asset('frontend/js/jquery.validate.min.js') }}"></script>
 <script src="{{ asset('frontend/js/migrate.js') }}"></script>
 <script src="{{ asset('frontend/js/owl.carousel.min.js') }}"></script>
 <script src="{{ asset('frontend/js/jquery.counterup.min.js') }}"></script>

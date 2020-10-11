@@ -719,7 +719,7 @@ $(document).ready(function () {
 						tripTime = days + " days, " + hrs + " hours, " + mins + " minutes";
 						sessionStorage.setItem('trip_time', tripTime);
 						//Redirect Form to another page for booking confirmation
-						window.location.href = "confirm-booking.html";
+						window.location.href = "confirm-booking";
 					}else{
 						alert("Wrong Time or Date Selected. Please check and try again!");
 						return false;
