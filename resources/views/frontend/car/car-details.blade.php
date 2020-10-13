@@ -77,7 +77,7 @@
                                 <li><i class="fas fa-money-bill"></i><span>Daily Price :</span> {{ $car->daily_price }}</li>
                             </ul>
                             <div class="book_fleet">
-                                <a href="{{ route('book', $car->slug) }}">Book Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+                                <a href="{{ route('booking-form', $car->slug) }}">Book Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
                             </div>
                         </div>
 

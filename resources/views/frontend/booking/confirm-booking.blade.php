@@ -21,7 +21,7 @@
             <div class="container">
                 <ul class="breadcrumb-list">
                     <li><a href="/">Home</a></li>
-                    <li><a href="booking-form.html">Booking Form</a></li>
+                    <li><a href="{{ route('booking-form', $selectedCar->slug) }}">Booking Form</a></li>
                     <li class="active">Confirm Booking</li>
                     <li><a href="payment.html">Payment</a></li>
                 </ul>
@@ -46,21 +46,21 @@
                                         <div class="info-field">
                                             <label>Full Name</label>
                                             <span class="far fa-user"></span>
-                                            <input type="text" name="username" placeholder="Enter Full Name">
+                                            <input type="text" name="name" placeholder="Enter Full Name">
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-sm-6">
                                         <div class="info-field">
                                             <label>Phone</label>
                                             <span class="icon-phone icomoon"></span>
-                                            <input type="tel" name="phone_num" placeholder="Enter Phone Number">
+                                            <input type="tel" name="phone_number" placeholder="Enter Phone Number">
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-sm-6">
                                         <div class="info-field">
                                             <label>Email</label>
                                             <span class="far fa-envelope"></span>
-                                            <input type="email" name="email_id" placeholder="Enter Email id">
+                                            <input type="email" name="email" placeholder="Enter Email id">
                                         </div>
                                     </div>
                                     <div class="col-md-12 col-sm-12">

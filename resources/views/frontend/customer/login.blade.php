@@ -27,6 +27,19 @@
     </div>
     <!--Breadcrumb Section End-->
 
+        <ul class="text-center">
+            @forelse($errors->all() as $error)
+                <li class="text-danger">{{ $error }}</li>
+            @empty
+            @endforelse
+        </ul>
+
+        @if(session()->has('msg'))
+            <p class="text-xl text-center" style="color: green">{{ session()->get('msg') }}</p>
+        @endif
+
+
+
     <!--Login Section Start-->
     <section class="tj-login">
         <div class="container">
@@ -70,19 +83,20 @@
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-6">
-                                <form class="login-frm" method="POST">
+                                <form class="login-frm" method="POST" action="{{ route('login') }}">
+                                    @csrf
                                     <div class="field-holder">
                                         <span class="far fa-envelope"></span>
-                                        <input type="email" name="login_email" placeholder="Enter your Email Address">
+                                        <input type="email" name="email" placeholder="Enter your Email Address">
                                     </div>
                                     <div class="field-holder">
                                         <span class="fas fa-lock"></span>
-                                        <input type="password" name="name" placeholder="Password">
+                                        <input type="password" name="password" placeholder="Password">
                                     </div>
                                     <a href="#" class="forget-pass">Forget Password?</a>
                                     <button type="submit" class="reg-btn">Login <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
-                                    <button type="submit" class="facebook-btn">Login with Facebook <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
-                                    <button type="submit" class="google-btn">Login with Google <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+{{--                                    <button type="submit" class="facebook-btn">Login with Facebook <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>--}}
+{{--                                    <button type="submit" class="google-btn">Login with Google <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>--}}
                                 </form>
                             </div>
                         </div>
@@ -116,26 +130,35 @@
                             </div>
                             <div class="col-md-6 col-sm-6">
                                 <!--Register Tabs Form Start-->
-                                <form class="reg-frm" method="POST">
+                                <form class="reg-frm" method="POST" action="{{ route('register') }}">
+                                    @csrf
                                     <div class="field-holder">
                                         <span class="far fa-user"></span>
-                                        <input type="text" name="username" placeholder="Username">
+                                        <input type="text" name="name" placeholder="Enter your Full Name" required>
                                     </div>
                                     <div class="field-holder">
                                         <span class="far fa-envelope"></span>
-                                        <input type="email" name="login_email" placeholder="Enter your Email Address">
+                                        <input type="email" name="email" placeholder="Enter your Email Address" required>
+                                    </div>
+                                    <div class="field-holder">
+                                        <span class="far fa-phone"></span>
+                                        <input type="text" name="phone_number" placeholder="Enter your Phone Number" required>
                                     </div>
                                     <div class="field-holder">
                                         <span class="fas fa-lock"></span>
-                                        <input type="password" name="name" placeholder="Password">
+                                        <input type="password" name="password" placeholder="Password" required>
+                                    </div>
+                                    <div class="field-holder">
+                                        <span class="fas fa-lock"></span>
+                                        <input type="password" name="password_confirmation" placeholder="Confirm Password" required>
                                     </div>
                                     <label for="terms">
-                                        <input type="checkbox" name="terms" id="terms">
+                                        <input type="checkbox" name="terms" id="terms" required>
                                         I accept terms & conditions
                                     </label>
                                     <button type="submit" class="reg-btn">Signup <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
-                                    <button type="submit" class="facebook-btn">Login with Facebook <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
-                                    <button type="submit" class="google-btn">Login with Google <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+{{--                                    <button type="submit" class="facebook-btn">Login with Facebook <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>--}}
+{{--                                    <button type="submit" class="google-btn">Login with Google <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>--}}
                                 </form>
                                 <!--Register Tabs Form End-->
                             </div>

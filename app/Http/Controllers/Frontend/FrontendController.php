@@ -26,16 +26,6 @@ class FrontendController extends Controller
         return view();
     }
 
-    public function login()
-    {
-        return view('frontend.customer.login');
-    }
-
-    public function user_account()
-    {
-        return view('frontend.customer.user-account');
-    }
-
     public function confirm_booking()
     {
         return view('frontend.booking.confirm-booking');

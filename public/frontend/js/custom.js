@@ -525,7 +525,7 @@ $(document).ready(function () {
 
 	if($('.booking-frm #pickup_date').length){
 		$('.booking-frm #pickup_date').datetimepicker({
-			format: 'MM/DD/YYYY',
+			format: 'YYYY-MM-DD',
 			minDate: today
 		});
 	}
@@ -538,7 +538,7 @@ $(document).ready(function () {
 
 	if($('.booking-frm #dropoff_date').length){
 		$('.booking-frm #dropoff_date').datetimepicker({
-			format: 'MM/DD/YYYY',
+			format: 'YYYY-MM-DD',
 			minDate: today
 		});
 	}
@@ -691,6 +691,7 @@ $(document).ready(function () {
 				var dropoff_date = $('.booking-frm #dropoff_date').val();
 				var dropoff_time = $('.booking-frm #dropoff_time').val();
 				var ride_car = $('.booking-frm #car_list option:selected').val();
+				var car_slug = $('.booking-frm #car_list option:selected').data('slug');
 				var book_ref = $('.booking-summary .book-ref').text();
 				//Save Form Values Inside Local Storage
 				sessionStorage.setItem('service_type', service_type);
@@ -702,6 +703,7 @@ $(document).ready(function () {
 				sessionStorage.setItem('dropoff_date', dropoff_date);
 				sessionStorage.setItem('dropoff_time', dropoff_time);
 				sessionStorage.setItem('selected_car', ride_car);
+				sessionStorage.setItem('car_slug', car_slug);
 				var tripTime = '';
 				var date1 = new Date(pickup_date + " " + pickup_time).getTime();
 				var date2 = new Date(dropoff_date + " " + dropoff_time).getTime();
@@ -719,7 +721,8 @@ $(document).ready(function () {
 						tripTime = days + " days, " + hrs + " hours, " + mins + " minutes";
 						sessionStorage.setItem('trip_time', tripTime);
 						//Redirect Form to another page for booking confirmation
-						window.location.href = "confirm-booking";
+						// window.location.href = "confirm-booking";
+						window.location.replace('confirm-booking/'+car_slug);
 					}else{
 						alert("Wrong Time or Date Selected. Please check and try again!");
 						return false;
@@ -734,14 +737,14 @@ $(document).ready(function () {
 	if($('#rider-info').length){
 		$('#rider-info').validate({
 			rules: {
-				username: "required",
-				phone_num: "required",
-				email_id: "required",
+				name: "required",
+				phone_number: "required",
+				email: "required",
 			},
 			messages: {
-				username: "This field is required",
-				phone_num: "This field is required",
-				email_id: "This field is required",
+                name: "This field is required",
+                phone_number: "This field is required",
+                email: "This field is required",
 			},
 			submitHandler: function(form) {
 				//Fetch Ride Booking Values
@@ -755,13 +758,15 @@ $(document).ready(function () {
 				var service_type = sessionStorage.getItem('service_type');
 				var trip_time = sessionStorage.getItem('trip_time');
 				var ride_car = sessionStorage.getItem('selected_car');
+				var car_slug = sessionStorage.getItem('car_slug');
 
 				if(start_loc !== null && end_loc !== null && pickup_date !== null && pickup_time !== null && dropoff_date !== null && dropoff_time !== null && service_type !== null && ride_car !== null){
 					$.ajax({
 						type : 'POST',
-						url : 'contact/ride-booking.php',
+						url : '/booking/car-booking',
 						data  : {
-							"formData" : $(form).serialize(),
+						    '_token' : $('meta[name="csrf-token"]').attr('content'),
+							"formData" : $(form).serializeArray(),
 							"book_ref" : book_ref,
 							"start_loc" : start_loc,
 							"end_loc" : end_loc,
@@ -772,6 +777,7 @@ $(document).ready(function () {
 							"service_type" : service_type,
 							"trip_time" : trip_time,
 							"selected_car" : ride_car,
+							"car_slug" : car_slug,
 						},
 						beforeSend: function() {
 							$("#ride-bbtn").text("Sending..").addClass('wait');

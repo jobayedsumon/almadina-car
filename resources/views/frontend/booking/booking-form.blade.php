@@ -94,7 +94,7 @@
                                                 <select name="car_name" id="car_list" class="selectpicker">
                                                     <option value="">Select Car</option>
                                                     @forelse(\App\Car::all() as $car)
-                                                    <option {!! $selectedCar ? ( $selectedCar->slug == $car->slug ? 'selected' : '' ) : '' !!} value="{{ $car->name }}"
+                                                    <option {!! $selectedCar ? ( $selectedCar->slug == $car->slug ? 'selected' : '' ) : '' !!} data-slug="{{ $car->slug }}" value="{{ $car->name }}"
                                                             data-hrrate="{{ $car->hourly_price }}" data-dayrate="{{ $car->daily_price }}">
                                                         {{ $car->name }}</option>
                                                     @empty
@@ -122,7 +122,7 @@
                             <h3>Booking Summary</h3>
                             <ul class="booking-info">
                                 <li><span>Booking Reference: </span><div class="book-ref"></div></li>
-                                <li><span>Journey Type: </span>
+                                <li><span>Service Type: </span>
                                     <div class="service_type"></div></li>
                                 <li><span>Selected Ride Car:</span>
                                     <div class="ride_car">Select Ride Car</div></li>

@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="description" content="Prime Cab HTML5 Responsive Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>Al Madina - Rent A Car</title>
     <link rel = "icon" href = "{{ asset('frontend/images/logo.png') }}" type = "image/x-icon">
 

@@ -15,15 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 //FRONTEND ROUTS
 
+
 Route::get('/', 'Frontend\FrontendController@index');
 
 Route::get('/page/{slug}', 'Frontend\FrontendController@page')->name('page');
-
-Route::get('/login', 'Frontend\FrontendController@login');
-
-Route::get('/user-account', 'Frontend\FrontendController@user_account');
-
-Route::get('/booking-confirmation', 'Frontend\FrontendController@booking_confirmation');
 
 Route::get('/car-list/{slug}', 'Frontend\FrontendController@car_list')->name('car-list');
 
@@ -31,9 +26,32 @@ Route::get('/car-details/{slug}', 'Frontend\FrontendController@car_details')->na
 
 Route::get('/service/{slug}', 'Frontend\FrontendController@service')->name('service');
 
-Route::get('/book/{slug}', 'Frontend\BookingController@booking_form')->name('book');
 
-Route::get('/book/confirm-booking', 'Frontend\BookingController@confirm_booking');
+//BOOKING ROUTES
+
+Route::prefix('/booking')->group(function () {
+
+    Route::post('/car-booking', 'Frontend\BookingController@car_booking');
+
+    Route::get('/car-booking', 'Frontend\BookingController@booking_form')->name('booking-form');
+
+    Route::get('/booking-confirmation', 'Frontend\FrontendController@booking_confirmation')->name('booking-confirmation');
+
+    Route::get('/confirm-booking/{slug}', 'Frontend\BookingController@confirm_booking');
+
+    Route::get('/{slug}', 'Frontend\BookingController@booking_form')->name('booking-form');
+
+});
+
+//USER ROUTES
+
+Route::get('/login', 'Frontend\UserController@login_page')->name('login');
+
+Route::post('/login', 'Frontend\UserController@login')->name('login');
+
+Route::post('/register', 'Frontend\UserController@register')->name('register');
+
+Route::get('/user-account', 'Frontend\UserController@user_account')->name('user-account');
 
 
 Route::group(['prefix' => 'admin'], function () {
