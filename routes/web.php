@@ -47,9 +47,9 @@ Route::prefix('/booking')->group(function () {
 
 Route::get('/login', 'Frontend\UserController@login_page')->name('login');
 
-Route::post('/login', 'Frontend\UserController@login')->name('login');
-
-Route::post('/register', 'Frontend\UserController@register')->name('register');
+//Route::post('/login', 'Frontend\UserController@login')->name('login');
+//
+//Route::post('/register', 'Frontend\UserController@register')->name('register');
 
 Route::get('/user-account', 'Frontend\UserController@user_account')->name('user-account');
 
@@ -57,3 +57,7 @@ Route::get('/user-account', 'Frontend\UserController@user_account')->name('user-
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+
+Auth::routes();
+
