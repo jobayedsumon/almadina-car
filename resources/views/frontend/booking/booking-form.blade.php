@@ -92,13 +92,7 @@
                                         <div class="field-holder">
                                             <div class="car-list">
                                                 <select name="car_name" id="car_list" class="selectpicker">
-                                                    <option value="">Select Car</option>
-                                                    @forelse(\App\Car::all() as $car)
-                                                    <option {!! $selectedCar ? ( $selectedCar->slug == $car->slug ? 'selected' : '' ) : '' !!} data-slug="{{ $car->slug }}" value="{{ $car->name }}"
-                                                            data-hrrate="{{ $car->hourly_price }}" data-dayrate="{{ $car->daily_price }}">
-                                                        {{ $car->name }}</option>
-                                                    @empty
-                                                    @endforelse
+                                                    <option selected data-slug="{{ $selectedCar->slug }}" value="{{ $selectedCar->name }}">{{ $selectedCar->name }}</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -187,5 +181,15 @@
     </div>
     <!--Wrapper Content End-->
 
+    @push('script')
+        <script>
+            var ride_car = '{{ $selectedCar->name }}';
+            sessionStorage.setItem('selected_car', '{{ $selectedCar->name }}');
+            sessionStorage.setItem('car_slug', '{{ $selectedCar->slug }}');
+        </script>
+    @endpush
+
 @endsection
+
+
 

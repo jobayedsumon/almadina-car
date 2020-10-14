@@ -48,5 +48,6 @@
 <script src="{{ asset('frontend/js/slick.min.js') }}"></script>
 <script src="{{ asset('frontend/js/custom.js') }}"></script>
 <!-- Js Files End -->
+@stack('script')
 </body>
 </html>

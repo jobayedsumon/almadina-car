@@ -27,6 +27,10 @@
     </div>
     <!--Breadcrumb Section End-->
 
+        @if(session()->has('msg'))
+            <p class="text-xl text-center" style="color: green">{{ session()->get('msg') }}</p>
+        @endif
+
         <!--User Account Section Start-->
         <section class="tj-account-frm">
             <div class="container">
@@ -34,68 +38,101 @@
                     <div class="col-md-12 col-sm-12">
                         <div class="tj-tabs">
                             <ul class="nav nav-tabs" role="tablist">
-                                <li class="active"><a href="#user_account" data-toggle="tab"><i class="far fa-user"></i> My Account</a></li>
+                                <li class="active"><a href="#user_account" data-toggle="tab"><i class="fas fa-user"></i> My Account</a></li>
                                 <li><a href="#booking_history" data-toggle="tab">
-                                        <i class="far fa-chart-bar"></i> Booking History</a></li>
+                                        <i class="fas fa-chart-bar"></i> Booking History</a></li>
                                 <li><a href="#cancel_booking" data-toggle="tab"><i class="fas fa-times"></i> Cancel Booking</a></li>
-                                <li><a href="#Logout" data-toggle="tab"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
                             </ul>
                         </div>
                         <div class="tab-content">
-                            <div class="tab-pane active" id="confirm_booking">
+                            <div class="tab-pane active" id="user_account">
                                 <form class="account-frm" method="POST">
                                     <div class="col-md-6 col-sm-6">
                                         <div class="account-field">
-                                            <label>First Name</label>
-                                            <span class="far fa-user"></span>
-                                            <input type="text" name="fname" placeholder="Enter First Name">
+                                            <label>Full Name</label>
+                                            <span class="fas fa-user"></span>
+                                            <input type="text" name="name" value="{{ $user->name }}" placeholder="Enter Full Name">
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-sm-6">
                                         <div class="account-field">
-                                            <label>Last Name</label>
-                                            <span class="far fa-user"></span>
-                                            <input type="text" name="lname" placeholder="Enter Last Name">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-sm-6">
-                                        <div class="account-field">
-                                            <label>Phone</label>
+                                            <label>Phone Number</label>
                                             <span class="icon-phone icomoon"></span>
-                                            <input type="tel" name="phone_num" placeholder="Enter Phone Number">
+                                            <input type="text" name="phone_number" placeholder="Enter Phone Number" value="{{ $user->phone_number }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-sm-6">
                                         <div class="account-field">
                                             <label>Email</label>
-                                            <span class="far fa-envelope"></span>
-                                            <input type="email" name="email_id" placeholder="Enter Email id">
+                                            <span class="fas fa-envelope"></span>
+                                            <input type="email" name="email" placeholder="Enter Email id" value="{{ $user->email }}">
                                         </div>
                                     </div>
-                                    <div class="col-md-4 col-sm-4">
+                                    <div class="col-md-6 col-sm-6">
                                         <div class="account-field">
-                                            <label>Old Password</label>
+                                            <label>Password ( Left blank to keep old Password )</label>
                                             <span class="fas fa-lock"></span>
-                                            <input type="password" name="old_pass" placeholder="Password">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 col-sm-4">
-                                        <div class="account-field">
-                                            <label>New Password</label>
-                                            <span class="fas fa-lock"></span>
-                                            <input type="password" name="new_pass" placeholder="Password">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 col-sm-4">
-                                        <div class="account-field">
-                                            <label>Confirm Password</label>
-                                            <span class="fas fa-lock"></span>
-                                            <input type="password" name="confirm_pass" placeholder="Password">
+                                            <input type="password" name="password" placeholder="Password">
                                         </div>
                                     </div>
 
                                     <div class="col-md-6 col-sm-6">
                                         <button type="submit" class="save-btn">Save <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="tab-pane" id="booking_history">
+                                <table class="table table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Reference</th>
+                                        <th scope="col">Car</th>
+                                        <th scope="col">Start Location</th>
+                                        <th scope="col">End Location</th>
+                                        <th scope="col">Pickup Date</th>
+                                        <th scope="col">Pickup Time</th>
+                                        <th scope="col">Dropoff Date</th>
+                                        <th scope="col">Dropoff Time</th>
+                                        <th scope="col">Service Type</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @forelse($user->bookings as $booking)
+                                    <tr>
+                                        <th scope="row">{{ $booking->reference }}</th>
+                                        <td>{{ $booking->car->name }}</td>
+                                        <td>{{ $booking->start_location }}</td>
+                                        <td>{{ $booking->end_location }}</td>
+                                        <td>{{ $booking->pickup_date }}</td>
+                                        <td>{{ $booking->pickup_time }}</td>
+                                        <td>{{ $booking->dropoff_date }}</td>
+                                        <td>{{ $booking->dropoff_time }}</td>
+                                        <td>{{ $booking->service_type }}</td>
+                                    </tr>
+                                    @empty
+                                    @endforelse
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="tab-pane" id="cancel_booking">
+                                <form class="account-frm" method="POST" action="{{ route('cancel-booking') }}">
+                                    @csrf
+                                    <div class="col-md-6 col-sm-6">
+                                        <div class="account-field">
+                                            <label>Booking List</label>
+                                            <select class="p-5" name="reference" id="">
+                                                @forelse($user->bookings as $booking)
+                                                    <option value="{{ $booking->reference }}">
+                                                       #{{ $booking->reference }} {{ $booking->car->name }} ( {{ $booking->start_location }} - {{ $booking->end_location }} )
+                                                    </option>
+                                                @empty
+                                                @endforelse
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-6">
+                                        <button type="submit" class="save-btn">Cancel <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
                                     </div>
                                 </form>
                             </div>

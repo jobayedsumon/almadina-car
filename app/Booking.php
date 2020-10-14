@@ -11,6 +11,6 @@ class Booking extends Model
 
     public function car()
     {
-        return $this->hasOne(Car::class);
+        return $this->belongsTo(Car::class);
     }
 }

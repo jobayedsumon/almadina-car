@@ -494,12 +494,12 @@ $(document).ready(function () {
 				success: function(res){
 					if(res.response===200){
 						$("#newsletter_btn").removeAttr('disabled');
-						$("#newsletter_btn").html('<i class="far fa-paper-plane"></i>');
+						$("#newsletter_btn").html('<i class="fas fa-paper-plane"></i>');
 						alert(emailAdd+" subscribed successfully. Thank you very much!");
 						$('#newsletter_frm')[0].reset();
 					}else{
 						$("#newsletter_btn").removeAttr('disabled');
-						$("#newsletter_btn").html('<i class="far fa-paper-plane"></i>');
+						$("#newsletter_btn").html('<i class="fas fa-paper-plane"></i>');
 						if(res.results.length > 0){
 							alert(res.results);
 						}else{
@@ -653,7 +653,7 @@ $(document).ready(function () {
 			}else if(booking_field_id=='dropoff_time'){
 				$('.booking-summary .drop_time').text('Enter Dropoff Time');
 			}else if(booking_field_id=='car_list'){
-				$('.booking-summary .ride_car').text('Select Ride Car');
+				$('.booking-summary .ride_car').text(ride_car);
 			}
 		}
 	});

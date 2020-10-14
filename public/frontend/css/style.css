@@ -333,7 +333,7 @@ h1,h2,h3,h4,h5,h6{
 	/*font-size:10px;*/
 	/*margin-right:10px;*/
 }
-.tj-nav-holder .navbar-default .navbar-nav .dropdown-menu > li > a{
+.tj-nav-holder .navbar-default .navbar-nav .dropdown-menu > li > a, form{
 	color:#444444;
 	padding:17px 0;
 	display:block;
@@ -516,7 +516,7 @@ h1,h2,h3,h4,h5,h6{
 	height:45px;
 	padding:0 15px;
 	width:280px;
-	color:#a6a6a6;
+	color:#000;
 	border-radius:5px;
 	margin-bottom:10px;
 	border:1px solid #e8e8e8;
@@ -527,7 +527,7 @@ h1,h2,h3,h4,h5,h6{
 	position:absolute;
 	top:10px;
 	right:25px;
-	color:#a6a6a6;
+	color:#000;
 	font-size:13px;
 	line-height:24px;
 	display:block;
@@ -1386,7 +1386,7 @@ h1,h2,h3,h4,h5,h6{
 	position:absolute;
 	top:15px;
 	right:15px;
-	color:#a6a6a6;
+	color:#000;
 	font-size:13px;
 	line-height:24px;
 	display:block;
@@ -2097,7 +2097,7 @@ h1,h2,h3,h4,h5,h6{
 	padding: 12px 20px;
 	font-size: 14px;
 	line-height: 24px;
-	color: #a6a6a6;
+	color: #000;
 	border: 1px solid #e8e8e8;
 	display: block;
 	margin-bottom: 15px;
@@ -2108,7 +2108,7 @@ h1,h2,h3,h4,h5,h6{
 	padding: 12px 20px;
 	font-size: 14px;
 	line-height: 24px;
-	color: #a6a6a6;
+	color: #000;
 	border: 1px solid #e8e8e8;
 	display: block;
 	border-radius: 4px;
@@ -2216,7 +2216,7 @@ h1,h2,h3,h4,h5,h6{
 	display:block;
 	font-size:13px;
 	line-height:24px;
-	color:#a6a6a6;
+	color:#000;
 }
 .tab-content .trip-frm2  input[type="text"]{
 	width:100%;
@@ -2225,7 +2225,7 @@ h1,h2,h3,h4,h5,h6{
 	font-size:14px;
 	line-height:24px;
 	font-weight:400;
-	color:#a6a6a6;
+	color:#000;
 	height:48px;
 	padding:0 20px;
 	border:1px solid #e8e8e8;
@@ -2365,7 +2365,7 @@ h1,h2,h3,h4,h5,h6{
 	border:1px solid #e8e8e8;
 	font-size:14px;
 	line-height:24px;
-	color:#a6a6a6;
+	color:#000;
 	margin-right:5px;
 }
 .contact_frm .frm-field input[type="email"]{
@@ -2377,7 +2377,7 @@ h1,h2,h3,h4,h5,h6{
 	border:1px solid #e8e8e8;
 	font-size:14px;
 	line-height:24px;
-	color:#a6a6a6;
+	color:#000;
 	margin-left:11px;
 }
 .form-box .contact_frm .frm-field textarea{
@@ -2385,7 +2385,7 @@ h1,h2,h3,h4,h5,h6{
 	resize:none;
 	font-size:14px;
 	line-height:24px;
-	color:#a6a6a6;
+	color:#000;
 	border-radius:5px;
 	border:1px solid #e8e8e8;
 	padding:14px 16px;
@@ -3035,7 +3035,7 @@ h1,h2,h3,h4,h5,h6{
 .car-filter .select-list{
 	font-size:14px;
 	line-height:24px;
-	color:#a6a6a6;
+	color:#000;
 	position:relative;
 	width:100%;
 	float:left;
@@ -3854,7 +3854,7 @@ h1,h2,h3,h4,h5,h6{
 	position:absolute;
 	top:19px;
 	left:15px;
-	color:#a6a6a6;
+	color:#000;
 }
 .reg-frm input[type="text"],.reg-frm input[type="email"],
 .reg-frm input[type="password"],.login-frm input[type="text"],
@@ -3863,7 +3863,7 @@ h1,h2,h3,h4,h5,h6{
 	padding:12px 35px;
 	font-size:14px;
 	line-height:24px;
-	color:#a6a6a6;
+	color:#000;
 	border:1px solid #e8e8e8;
 	display:block;
 	margin-bottom:15px;
@@ -4106,7 +4106,7 @@ h1,h2,h3,h4,h5,h6{
 	position:absolute;
 	top:19px;
 	right:15px;
-	color:#a6a6a6;
+	color:#000;
 }
 .booking-frm input[type="text"],.booking-frm input[type="email"],
 .booking-frm input[type="date"]{
@@ -4114,7 +4114,7 @@ h1,h2,h3,h4,h5,h6{
 	padding:12px 15px;
 	font-size:14px;
 	line-height:24px;
-	color:#a6a6a6;
+	color:#000;
 	border:1px solid #e8e8e8;
 	display:block;
 	margin-bottom:15px;
@@ -4347,7 +4347,7 @@ h1,h2,h3,h4,h5,h6{
 	position:absolute;
 	top:43px;
 	left:12px;
-	color:#a6a6a6;
+	color:#000;
 	font-size:13px;
 }
 .cb-frm .info-field input[type="text"],.cb-frm .info-field input[type="email"],
@@ -4359,7 +4359,7 @@ h1,h2,h3,h4,h5,h6{
 	height:45px;
 	display:block;
 	padding:0 30px;
-	color:#a6a6a6;
+	color:#000;
 	font-size:14px;
 	line-height:24px;
 	border-radius:5px;
@@ -4434,7 +4434,7 @@ h1,h2,h3,h4,h5,h6{
 	position:absolute;
 	top:43px;
 	left:26px;
-	color:#a6a6a6;
+	color:#000;
 	font-size:13px;
 }
 .account-frm .account-field .file-btn{
@@ -4458,7 +4458,7 @@ h1,h2,h3,h4,h5,h6{
 	left:0;
 	display:inline-block;
 	font-size:14px;
-	color:#a6a6a6;
+	color:#000;
 	line-height:24px;
 	font-weight:400;
 	overflow: hidden;
@@ -4482,7 +4482,7 @@ h1,h2,h3,h4,h5,h6{
 	padding:18px 18px;
 	display:block;
 	font-size:14px;
-	color:#a6a6a6;
+	color:#000;
 	line-height:24px;
 	border:1px solid #e8e8e8;
 	resize:none;
@@ -4514,7 +4514,7 @@ h1,h2,h3,h4,h5,h6{
 .account-frm .account-field .reason_list{
 	font-size:14px;
 	line-height:24px;
-	color:#a6a6a6;
+	color:#000;
 	position:relative;
 	width:100%;
 	margin-bottom:15px;
@@ -4605,7 +4605,7 @@ h1,h2,h3,h4,h5,h6{
 	position:absolute;
 	top:39px;
 	left:30px;
-	color:#a6a6a6;
+	color:#000;
 	font-size:12px;
 }
 .inner-holder label[for="email"]:before{
@@ -4614,7 +4614,7 @@ h1,h2,h3,h4,h5,h6{
 	position:absolute;
 	top:39px;
 	left:20px;
-	color:#a6a6a6;
+	color:#000;
 	font-size:12px;
 }
 .tj-contact-form #name,.tj-contact-form #email{
@@ -4626,7 +4626,7 @@ h1,h2,h3,h4,h5,h6{
 	height:45px;
 	border:1px solid #e8e8e8;
 	padding:0 15px;
-	color:#a6a6a6;
+	color:#000;
 	font-size:14px;
 	line-height:24px;
 	margin-bottom:20px;
@@ -4638,7 +4638,7 @@ h1,h2,h3,h4,h5,h6{
 	resize:none;
 	padding:15px 15px;
 	height:165px;
-	color:#a6a6a6;
+	color:#000;
 	font-size:14px;
 	line-height:24px;
 	margin-bottom:15px;
@@ -4964,7 +4964,7 @@ h1,h2,h3,h4,h5,h6{
     border: 1px solid #e8e8e8;
     padding: 8px 14px;
     display: block;
-    color: #a6a6a6;
+    color: #000;
     font-size: 14px;
     line-height: 24px;
     border-radius: 20px;
@@ -4994,7 +4994,7 @@ h1,h2,h3,h4,h5,h6{
     border: 1px solid #e8e8e8;
     padding: 8px 14px;
     display: block;
-    color: #a6a6a6;
+    color: #000;
     font-size: 14px;
     line-height: 24px;
     border-radius: 20px;
@@ -5116,7 +5116,7 @@ ul.cats li a {
 .booking-frm .car-list {
     font-size: 14px;
     line-height: 24px;
-    color: #a6a6a6;
+    color: #000;
     position: relative;
     width: 100%;
     float: left;

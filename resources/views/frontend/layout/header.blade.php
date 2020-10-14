@@ -62,9 +62,22 @@
                                 </li>
                                 <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ACCOUNT<i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="blog.html">LOGIN</a></li>
-                                        <li><a href="blog-list.html">REGISTER</a></li>
-                                        <li><a href="blog-detail.html">USER ACCOUNT</a></li>
+                                        @auth()
+                                            <li><a href="{{ route('user-account') }}">USER ACCOUNT</a></li>
+                                            <li>
+                                                <form action="{{ route('logout') }}" method="POST">
+                                                    @csrf
+                                                    <button type="submit">LOG OUT</button>
+                                                </form>
+
+                                            </li>
+                                            @endauth
+                                        @guest()
+                                                <li><a href="{{ route('login') }}">LOGIN</a></li>
+                                                <li><a href="{{ route('login') }}#register">REGISTER</a></li>
+                                            @endguest
+
+
                                     </ul>
                                 </li>
 
@@ -77,9 +90,7 @@
                         <!-- Navigation Content Start -->
                     </nav>
                     <!--Menu Holder End-->
-                    <div class="book_btn">
-                        <a href="contact.html">BOOK NOW <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
-                    </div>
+
                 </div><!--Nav Holder End-->
             </div>
         </div>

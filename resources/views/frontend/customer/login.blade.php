@@ -86,7 +86,7 @@
                                 <form class="login-frm" method="POST" action="{{ route('login') }}">
                                     @csrf
                                     <div class="field-holder">
-                                        <span class="far fa-envelope"></span>
+                                        <span class="fas fa-envelope"></span>
                                         <input type="email" name="email" placeholder="Enter your Email Address">
                                     </div>
                                     <div class="field-holder">
@@ -133,15 +133,15 @@
                                 <form class="reg-frm" method="POST" action="{{ route('register') }}">
                                     @csrf
                                     <div class="field-holder">
-                                        <span class="far fa-user"></span>
+                                        <span class="fas fa-user"></span>
                                         <input type="text" name="name" placeholder="Enter your Full Name" required>
                                     </div>
                                     <div class="field-holder">
-                                        <span class="far fa-envelope"></span>
+                                        <span class="fas fa-envelope"></span>
                                         <input type="email" name="email" placeholder="Enter your Email Address" required>
                                     </div>
                                     <div class="field-holder">
-                                        <span class="far fa-phone"></span>
+                                        <span class="fas fa-phone"></span>
                                         <input type="text" name="phone_number" placeholder="Enter your Phone Number" required>
                                     </div>
                                     <div class="field-holder">

@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'Frontend\FrontendController@index');
 
+Route::get('/search', 'Frontend\FrontendController@search')->name('search');
+
 Route::get('/page/{slug}', 'Frontend\FrontendController@page')->name('page');
 
 Route::get('/car-list/{slug}', 'Frontend\FrontendController@car_list')->name('car-list');
@@ -39,25 +41,20 @@ Route::prefix('/booking')->group(function () {
 
     Route::get('/confirm-booking/{slug}', 'Frontend\BookingController@confirm_booking');
 
+    Route::post('/cancel', 'Frontend\BookingController@cancel_booking')->name('cancel-booking');
+
     Route::get('/{slug}', 'Frontend\BookingController@booking_form')->name('booking-form');
 
 });
 
 //USER ROUTES
 
-Route::get('/login', 'Frontend\UserController@login_page')->name('login');
+Auth::routes();
 
-//Route::post('/login', 'Frontend\UserController@login')->name('login');
-//
-//Route::post('/register', 'Frontend\UserController@register')->name('register');
-
-Route::get('/user-account', 'Frontend\UserController@user_account')->name('user-account');
-
+Route::get('/user-account', 'Frontend\UserController@user_account')->middleware('auth')->name('user-account');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
-
-Auth::routes();
 

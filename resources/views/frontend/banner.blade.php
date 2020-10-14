@@ -12,9 +12,7 @@
                     <div class="banner-inner bounceInLeft animated delay-2s" >
                         <strong>Choose your comfort car from our collection</strong>
                         <h2>Upto 25% off on first booking through our website</h2>
-                        <div class="banner-btns">
-                            <a href="faq.html" class="btn-style-1"> BOOK NOW </a>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -22,32 +20,28 @@
             <!--Header Banner Form Content Start-->
             <div class="col-md-4 col-sm-5">
                 <div class="trip-outer">
-                    <div class="trip-type-tabs">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#one-way" data-toggle="tab">One Way</a></li>
-                            <li><a href="#two-way" data-toggle="tab">Two Way</a></li>
-                        </ul>
-                    </div>
                     <!--Banner Tab Content Start-->
                     <div class="tab-content">
                         <div class="tab-pane active" id="one-way">
                             <!--Banner Form Content Start-->
-                            <form method="POST" class="trip-type-frm">
+                            <form method="GET" class="trip-type-frm" action="{{ route('search') }}">
+                                @csrf
                                 <div class="field-outer">
                                     <span class="fas fa-search"></span>
-                                    <input type="text" name="pick_loc" placeholder="Pickup Locations">
+                                    <input type="text" name="car_name" placeholder="Car Name">
                                 </div>
+
                                 <div class="field-outer">
                                     <span class="fas fa-search"></span>
-                                    <input type="text" name="drop_loc" placeholder="Drop Locations">
+                                    <input type="text" name="car_district" placeholder="Car District">
                                 </div>
                                 <div class="field-outer">
                                     <span class="fas fa-calendar-alt"></span>
-                                    <input type="text" name="pick_date" placeholder="Select your Date">
+                                    <input type="text" name="max_hourly_price" placeholder="Max Hourly Price">
                                 </div>
                                 <div class="field-outer">
                                     <span class="far fa-clock"></span>
-                                    <input type="text" name="drop_date" placeholder="Select Timings">
+                                    <input type="text" name="max_daily_price" placeholder="Max Daily Price">
                                 </div>
 {{--                                <div class="field-outer">--}}
 {{--                                    <input type="checkbox" name="promo_code" id="promo_code">--}}

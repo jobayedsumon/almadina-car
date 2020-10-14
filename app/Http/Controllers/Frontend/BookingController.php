@@ -37,7 +37,8 @@ class BookingController extends Controller
             'dropoff_time' => $request->dropoff_time,
             'service_type' => $request->service_type,
             'trip_time' => $request->trip_time,
-            'car_id' => $car->id
+            'car_id' => $car->id,
+            'customer_id' => auth()->id()
         ]);
 
         foreach ($formData as $data) {
@@ -48,5 +49,14 @@ class BookingController extends Controller
 
         return 1;
 
+    }
+
+    public function cancel_booking(Request $request)
+    {
+        $booking = Booking::where('reference', $request->reference)->first();
+
+        $booking->delete();
+
+        return redirect(route('user-account'))->with('msg', 'Booking cancelled successfully !');
     }
 }

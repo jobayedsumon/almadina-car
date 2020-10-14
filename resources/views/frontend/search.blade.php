@@ -9,57 +9,38 @@
     @include('frontend.layout.header')
     <!--Header END-->
 
-    <!--Inner Banner Section Start-->
-    <div class="tj-inner-banner" style="background: url('{{ asset($category->image) }}') top center no-repeat; background-size: cover">
-        <div class="container">
-            <h2>{{ $category->name }}</h2>
-        </div>
-    </div>
-    <!--Inner Banner Section End-->
-
-    <!--Breadcrumb Section Start-->
-    <div class="tj-breadcrumb">
-        <div class="container">
-            <ul class="breadcrumb-list">
-                <li><a href="/">Home</a></li>
-                <li class="active">{{ $category->name }}</li>
-            </ul>
-        </div>
-    </div>
-    <!--Breadcrumb Section End-->
-
-    <!--Fleet Section Start-->
-    <section class="car-fleet">
-        <div class="container">
-            <div class="row">
-                <!--Fleet Column Start-->
-                <div class="col-md-12 col-sm-12">
-                    <div class="fleet-nav-outer">
-                        <div class="row">
-                            <!--Fleet Result Count Column Start-->
-                            <div class="col-md-8 col-sm-8">
-                                <div class="result-count">
-                                    <h1>Total {{ count($cars) }} cars</h1>
+        <!--Fleet Section Start-->
+        <section class="car-fleet">
+            <div class="container">
+                <div class="row">
+                    <!--Fleet Column Start-->
+                    <div class="col-md-12 col-sm-12">
+                        <div class="fleet-nav-outer">
+                            <div class="row">
+                                <!--Fleet Result Count Column Start-->
+                                <div class="col-md-8 col-sm-8">
+                                    <div class="result-count">
+                                        <h1>Showing search results...</h1>
+                                    </div>
                                 </div>
+                                <!--Fleet Result Count Column End-->
+                                <!--Fleet Nav Column Start-->
+
+                                <!--Fleet Nav Column End-->
                             </div>
-                            <!--Fleet Result Count Column End-->
-                            <!--Fleet Nav Column Start-->
-
-                            <!--Fleet Nav Column End-->
                         </div>
-                    </div>
 
-                    <!--Tab Content Start-->
-                    <div class="tab-content">
-                        <!--Fleet Grid Tab Content Start-->
+                        <!--Tab Content Start-->
+                        <div class="tab-content">
+                            <!--Fleet Grid Tab Content Start-->
 
-                        <!--Fleet Grid Tab Content End-->
+                            <!--Fleet Grid Tab Content End-->
 
-                        <!--Fleet List Tab Content Start-->
-                        <div class="tab-pane active" id="car-list">
-                            <!--Fleet List Box Wrapper Start-->
-                            <div class="fleet-list">
-                                <div class="row">
+                            <!--Fleet List Tab Content Start-->
+                            <div class="tab-pane active" id="car-list">
+                                <!--Fleet List Box Wrapper Start-->
+                                <div class="fleet-list">
+                                    <div class="row">
 
                                     @forelse($cars as $car)
                                         <!--Fleet List Box Start-->
@@ -109,60 +90,52 @@
                                                 </div>
                                             </div>
                                             <!--Fleet List Box End-->
-                                    @empty
-                                    @endforelse
+                                        @empty
+                                        @endforelse
 
+                                    </div>
                                 </div>
+                                <!--Fleet List Box Wrapper End-->
                             </div>
-                            <!--Fleet List Box Wrapper End-->
+                            <!--Fleet List Tab Content End-->
                         </div>
-                        <!--Fleet List Tab Content End-->
-                    </div>
-                    <!--Tab Content End-->
-                    <!--Pagination Section Start-->
-                    <div class="pagination-box">
-                        <nav aria-label="navigation">
-                            {!! $cars->links() !!}
+                        <!--Tab Content End-->
+                        <!--Pagination Section Start-->
+                        <div class="pagination-box">
+                            <nav aria-label="navigation">
+                                {!! $cars->links() !!}
 
-                        </nav>
+                            </nav>
+                        </div>
+                        <!--Pagination Section End-->
                     </div>
-                    <!--Pagination Section End-->
+                    <!--Fleet Column End-->
                 </div>
-                <!--Fleet Column End-->
             </div>
-        </div>
-    </section>
-    <!--Fleet Section End-->
+        </section>
+        <!--Fleet Section End-->
 
-        <!--Call To Action Content Start-->
-        <section class="tj-cal-to-action" style="background: url('{{ asset("frontend/images/cta-bg2.jpg") }}') no-repeat center center">
+
+        <!--Testimonials Section Start-->
+    @include('frontend.our-customers')
+    <!--Testimonials Section End-->
+
+        <!--Customers Section Start-->
+    @include('frontend.testimonials')
+    <!--Customers Section End-->
+
+        <section class="tj-cal-to-action2" style="background: url('{{ asset("frontend/images/cta-bg2.jpg") }}') no-repeat center center">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4 col-sm-4">
-                        <div class="cta-box">
-                            <img src="{{ asset('frontend/images/cta-icon-home.png') }}" alt=""/>
-                            <div class="cta-text">
-                                <strong>Home Pickup</strong>
-                                <p>A more recently with desktop softy  like aldus page maker.</p>
-                            </div>
+                    <div class="col-md-9 col-sm-9">
+                        <div class="cta-tagline">
+                            <h2>Incredible Destinations at Incredible Deals</h2>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-4">
-                        <div class="cta-box">
-                            <img src="{{ asset('frontend/images/cta-icon2.png') }}" alt=""/>
-                            <div class="cta-text">
-                                <strong>24/7 Customer Care</strong>
-                                <p>A more recently with desktop softy  like aldus page maker.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4">
-                        <div class="cta-box">
-                            <img src="{{ asset('frontend/images/cta-icon3.png') }}" alt=""/>
-                            <div class="cta-text">
-                                <strong>Easy Bookings</strong>
-                                <p>A more recently with desktop softy  like aldus page maker.</p>
-                            </div>
+
+                    <div class="col-md-3 col-sm-3">
+                        <div class="cta-btn">
+                            <a href="booking-form.html">Book Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
@@ -176,4 +149,3 @@
     <!--Wrapper Content End-->
 
 @endsection
-

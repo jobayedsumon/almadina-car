@@ -54,4 +54,29 @@ class FrontendController extends Controller
         $service = Service::where('slug', $slug)->first();
         dd($service);
     }
+
+    public function search(Request $request)
+    {
+        $max_hourly_price = (int) $request->max_hourly_price;
+        $max_daily_price = (int) $request->max_daily_price;
+
+        $cars = Car::where('status', 1);
+
+        if ($request->car_name) {
+            $cars = $cars->where('name', 'LIKE', '%'.$request->car_name.'%');
+        }
+        if ($request->car_district) {
+            $cars = $cars->where('district', 'LIKE', '%'.$request->car_district.'%');
+        }
+        if ($max_hourly_price) {
+            $cars = $cars->where('hourly_price', '<=', $max_hourly_price);
+        }
+        if ($max_daily_price) {
+            $cars = $cars->where('daily_price', '<=', $max_daily_price);
+        }
+
+        $cars = $cars->paginate(5);
+
+        return view('frontend.search', compact('cars'));
+    }
 }

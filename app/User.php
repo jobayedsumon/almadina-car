@@ -16,7 +16,7 @@ class User extends \TCG\Voyager\Models\User
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'phone_number'
     ];
 
     /**
@@ -36,4 +36,9 @@ class User extends \TCG\Voyager\Models\User
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function bookings()
+    {
+        return $this->hasMany(Booking::class, 'customer_id');
+    }
 }

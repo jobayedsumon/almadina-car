@@ -18,7 +18,8 @@ class UserController extends Controller
 
     public function user_account()
     {
-        return view('frontend.customer.user-account');
+        $user = auth()->user();
+        return view('frontend.customer.user-account', compact('user'));
     }
 
     public function register(Request $request)
