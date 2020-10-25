@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'Frontend\FrontendController@index');
 
+Route::get('/contact-us', 'Frontend\FrontendController@contact_us')->name('contact-us');
+
 Route::get('/search', 'Frontend\FrontendController@search')->name('search');
 
 Route::get('/page/{slug}', 'Frontend\FrontendController@page')->name('page');

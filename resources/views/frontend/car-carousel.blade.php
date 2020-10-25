@@ -25,7 +25,7 @@
                     </ul>
                     <strong class="price">BDT {{ $slider->car->hourly_price }}<span> / hour</span></strong>
                     <strong class="price">BDT {{ $slider->car->daily_price }}<span> / day</span></strong>
-                    <a href="booking-form.html">Book Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+                    <a href="{{ route('booking-form', $slider->car->slug) }}">Book Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
                 </div>
             </div>
             @empty

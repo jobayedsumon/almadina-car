@@ -13,10 +13,8 @@
                     <p>Search for will uncover many web sites variables onto of passages of lorem ipsum available but the majority the words all predefined humour to met chunks recently with desktop.</p>
                     <ul class="fsocial-links">
                         <li><a href="http://www.facebook.com"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="http://www.twitter.com"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="http://www.twitter.com"><i class="fab fa-youtube"></i></a></li>
                         <li><a href="http://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a></li>
-                        <li><a href="http://www.pinterest.com"><i class="fab fa-pinterest-p"></i></a></li>
-                        <li><a href="http://www.instagram.com"><i class="fab fa-instagram"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -63,6 +61,10 @@
                             <br>
                             <span class="ml-12">
                             +880-1925-063543
+                            </span>
+                            <br>
+                            <span class="ml-12">
+                            +880-1721-292892
                             </span>
 
                         </li>

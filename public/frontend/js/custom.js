@@ -97,22 +97,23 @@ $(document).ready(function () {
             dots: false,
             nav:true,
             navText:'',
-            items:1,
-            autoplay:true,
-            smartSpeed:1200,
+            items:2,
+            margin:30,
+            autoplay: true,
+            smartSpeed:1000,
             responsiveClass:true,
             responsive:{
                 0:{
-                    items:1,
+                    items:2,
                 },
                 768:{
-                    items:1,
+                    items:2,
                 },
                 992:{
-                    items:1,
+                    items:2,
                 },
                 1199:{
-                    items:1,
+                    items:2,
                 }
             }
         });

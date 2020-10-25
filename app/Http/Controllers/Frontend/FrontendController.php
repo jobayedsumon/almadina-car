@@ -21,9 +21,7 @@ class FrontendController extends Controller
     {
         $page = Page::where('slug', $slug)->first();
 
-        dd($page);
-
-        return view();
+        return view('frontend.page', compact('page'));
     }
 
     public function confirm_booking()
@@ -52,7 +50,8 @@ class FrontendController extends Controller
     public function service($slug)
     {
         $service = Service::where('slug', $slug)->first();
-        dd($service);
+
+        return view('frontend.contact-us');
     }
 
     public function search(Request $request)
@@ -78,5 +77,10 @@ class FrontendController extends Controller
         $cars = $cars->paginate(5);
 
         return view('frontend.search', compact('cars'));
+    }
+
+    public function contact_us()
+    {
+        return view('frontend.contact-us');
     }
 }

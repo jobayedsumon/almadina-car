@@ -46,6 +46,8 @@
 <script src="{{ asset('frontend/js/jquery.counterup.min.js') }}"></script>
 <script src="{{ asset('frontend/js/waypoints.min.js') }}"></script>
 <script src="{{ asset('frontend/js/slick.min.js') }}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6jA7zgSOl8PDIEhtHL4nmOvGCLezPYn4"></script>
+<script src="{{ asset('frontend/js/map.js') }}"></script>
 <script src="{{ asset('frontend/js/custom.js') }}"></script>
 <!-- Js Files End -->
 @stack('script')

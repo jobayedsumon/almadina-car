@@ -49,22 +49,22 @@
                         <h3>Who We Are</h3>
                     </div>
                     <p>Lorem Ipsum passages, and more recently with desktop publishing software like aldus pageMaker including versions of all the Lorem Ipsum generators on thet Internet tends to repeat predefined chunks as necessary, making this an web evolved over the years, sometimes by accident.</p>
-                    <a href="fleet-grid.html">See all Vehicles<i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+
                     <ul class="facts-list">
                         <li>
-                            <strong class="fact-count">100</strong>
+                            <strong class="fact-count">{{ \App\User::count() }}</strong>
                             <i class="fa fa-plus"></i>
                             <span>Happy Customer</span>
                         </li>
                         <li>
-                            <strong class="fact-count">200</strong>
+                            <strong class="fact-count">{{ \App\Car::count() }}</strong>
                             <i class="fas fa-plus"></i>
                             <span>Luxury Cars</span>
                         </li>
                         <li>
-                            <strong class="fact-count">12,000</strong>
+                            <strong class="fact-count">{{ \App\Booking::count() }}</strong>
                             <i class="fas fa-arrow-up"></i>
-                            <span>Kilometers Driven</span>
+                            <span>Bookings</span>
                         </li>
                     </ul>
                 </div>
@@ -73,7 +73,7 @@
             <!--Welcome Section Image Box Start-->
             <div class="col-md-6 col-sm-5">
                 <div class="welcome-banner">
-                    <img src="{{ asset('storage/images/welcome-img.jpg') }}" alt=""/>
+                    <img src="{{ asset('frontend/images/logo.png') }}" alt=""/>
                 </div>
             </div>
             <!--Welcome Section Image Box End-->

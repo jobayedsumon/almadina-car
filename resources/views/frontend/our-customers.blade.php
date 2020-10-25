@@ -10,11 +10,12 @@
                 <!--Testimonials Slider Content Start-->
                 <div id="testimonial-slider" class="reviews-slider">
 
-                    <img src="{{ asset('storage/images/picture-78-1582547557.jpg') }}" alt="" />
-
-
-                    <img src="{{ asset('storage/images/robi-airtel.jpg') }}" alt="" />
-
+                    @forelse(\App\CorporateClient::all() as $client)
+                    <a target="_blank" href="{{ $client->link }}">
+                        <img src="{{ asset($client->image) }}" alt="" />
+                    </a>
+                    @empty
+                    @endforelse
 
                 </div>
                 <!--Testimonials Slider Content End-->
