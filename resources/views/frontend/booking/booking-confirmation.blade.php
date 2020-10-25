@@ -21,9 +21,9 @@
             <div class="container">
                 <ul class="breadcrumb-list">
                     <li><a href="/">Home</a></li>
-                    <li><a href="booking-form.html">Booking Form</a></li>
+                    <li><a href="#">Booking Form</a></li>
                     <li>Confirm Booking</li>
-                    <li class="active"><a href="payment.html">Booking Confirmation</a></li>
+                    <li class="active"><a href="">Booking Confirmation</a></li>
                 </ul>
             </div>
         </div>
@@ -37,35 +37,42 @@
                     <div class="col-md-8 col-sm-8">
                         <div class="success-msg">
                             <span class="fas fa-check"></span>
-                            <h3>Payment Successfull!</h3>
-                            <p>Your payment of $460.00 to PrimeCabs ID:PR12345670 has been  proceeded Successfully!.We’ll send you a confirmation Email shortly.</p>
-                            <a href="home-1.html"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Back to Home</a>
+                            <h3>Booking Successfull!</h3>
+                            <p>Your car booking at Almadina Car has been  placed Successfully!. Your booking reference no. is #
+                                <span style="border: none" id="confirmed_book_ref"></span> .</p>
+                            <a href="/"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Back to Home</a>
                         </div>
                     </div>
 
-                    <div class="col-md-4 col-sm-4">
+                    <div class="col-md-4 col-sm-4 col-xs-12">
                         <div class="booking-summary">
                             <h3>Booking Summary</h3>
                             <ul class="booking-info">
-                                <li><span>Booking Reference: </span>PRIM00023</li>
-                                <li><span>Journey Type: </span>One Way</li>
-                                <li><span>Distance & Time: </span>2,522 km &         23 hours 7 mins</li>
-                                <li><span>One Way Fare: </span>$450</li>
+                                <li><span>Booking Reference: </span><div class="book-ref"></div></li>
+                                <li><span>Journey Type:</span>
+                                    <div class="service_type">Select Service Type</div></li>
+                                <li><span>Selected Ride Car:</span>
+                                    <div class="ride_car">Select Ride Car</div></li>
                             </ul>
                             <div class="journey-info">
-                                <h4>One Way Journey</h4>
-                                <i class="far fa-edit"></i>
+                                <h4	class="service_type">Select Service Type</h4>
                             </div>
                             <ul class="service-info">
-                                <li><span>From: </span>San Francisco, USA</li>
-                                <li><span>To: </span>New York, USA</li>
-                                <li><span>Pickup Date: </span>20-05-2017</li>
-                                <li><span>Pickup Time: </span>02.30PM</li>
-                                <li><span>Fare Details: </span>Basic Amount: $450.00</li>
+                                <li><span>From: </span><div class="startup_loc info-outer">Enter Startup Location</div></li>
+                                <li><span>To: </span><div class="end_loc info-outer">Enter Destination</div></li>
+                                <li><span>Pickup Date: </span><div class="pick_date info-outer">Enter Pickup Date</div></li>
+                                <li><span>Pickup Time: </span><div class="pick_time info-outer">Enter Pickup Time</div></li>
+                                <li><span>Dropoff Date: </span><div class="drop_date info-outer">Enter Dropoff Date</div></li>
+                                <li><span>Dropoff Time: </span><div class="drop_time info-outer">Enter Dropoff Time</div></li>
                             </ul>
                             <div class="fare-box">
-                                <strong>Total Fare: <span>$450.00</span></strong>
-                                <span>( inclusive of All Taxes )</span>
+                                <strong>Trip Estimation</strong>
+                                <span class="trip_est">Not Available</span>
+                            </div>
+
+                            <div class="fare-box">
+                                <strong>Trip Cost</strong>
+                                <span class="trip_cost">Not Available</span>
                             </div>
                         </div>
                     </div>
@@ -117,5 +124,11 @@
     </div>
     <!--Wrapper Content End-->
 
+
+
 @endsection
+
+<script>
+
+</script>
 

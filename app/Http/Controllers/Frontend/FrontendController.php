@@ -29,11 +29,6 @@ class FrontendController extends Controller
         return view('frontend.booking.confirm-booking');
     }
 
-    public function booking_confirmation()
-    {
-        return view('frontend.booking.booking-confirmation');
-    }
-
     public function car_list($slug)
     {
         $category = Category::where('slug', $slug)->first();

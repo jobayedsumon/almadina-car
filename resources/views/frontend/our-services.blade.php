@@ -15,7 +15,7 @@
                     <div class="cab-service-box">
                         <!--Cab Services Thumb Start-->
                         <figure class="service-thumb">
-                            <img src="{{ asset($service->image) }}" alt=""/>
+                            <img src="{{ asset('storage/'.$service->image) }}" alt=""/>
                         </figure>
                         <!--Cab Services Thumb End-->
                         <!--Cab Services Info Start-->

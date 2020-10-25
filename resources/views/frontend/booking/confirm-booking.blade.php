@@ -23,7 +23,7 @@
                     <li><a href="/">Home</a></li>
                     <li><a href="{{ route('booking-form', $selectedCar->slug) }}">Booking Form</a></li>
                     <li class="active">Confirm Booking</li>
-                    <li><a href="payment.html">Payment</a></li>
+                    <li><a href="">Booking Confirmation</a></li>
                 </ul>
             </div>
         </div>
@@ -95,7 +95,7 @@
                             </ul>
                             <div class="fare-box">
                                 <strong>Trip Estimation</strong>
-                                <span class="trip_est">Not Available</span>
+                                <span class="trip_est">{{  }}</span>
                             </div>
                         </div>
                     </div>

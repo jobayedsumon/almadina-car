@@ -10,7 +10,7 @@
     <!--Header END-->
 
     <!--Inner Banner Section Start-->
-    <div class="tj-inner-banner" style="background: url('{{ asset($category->image) }}') top center no-repeat; background-size: cover">
+    <div class="tj-inner-banner" style="background: url('{{ asset('storage/'.$category->image) }}') top center no-repeat; background-size: cover">
         <div class="container">
             <h2>{{ $category->name }}</h2>
         </div>
@@ -68,7 +68,7 @@
                                                     <!--Fleet List Thumb Start-->
                                                     <figure class="fleet-thumb">
                                                         <a href="{{ route('car-details', $car->slug) }}">
-                                                            <img src="{{ asset(json_decode($car->images)[0]) }}" alt=""/>
+                                                            <img src="{{ asset('storage/'.json_decode($car->images)[0]) }}" alt=""/>
                                                         </a>
 
                                                     </figure>
@@ -103,7 +103,7 @@
                                                         <span class="fas fa-star"></span>
                                                         <span class="fas fa-star"></span>
                                                         <p>{{ $car->excerpt }}</p>
-                                                        <a href="booking-form.html" class="tj-btn">Book Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+                                                        <a href="{{ route('booking-form', $car->slug) }}" class="tj-btn">Book Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
                                                     </div>
                                                     <!--Fleet List Text Start-->
                                                 </div>

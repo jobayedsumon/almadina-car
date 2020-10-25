@@ -9,7 +9,7 @@
     @include('frontend.layout.header')
 
     <!--Inner Banner Section Start-->
-    <div class="tj-inner-banner" style="background: url('{{ asset(json_decode($car->images)[0]) }}') top center no-repeat; background-size: cover">
+    <div class="tj-inner-banner" style="background: url('{{ asset('storage/'.json_decode($car->images)[0]) }}') top center no-repeat; background-size: cover">
         <div class="container">
             <h2>{{ $car->name }}</h2>
         </div>
@@ -37,7 +37,7 @@
                             <div class="gallery">
                                 @forelse(json_decode($car->images) as $image)
                                     <div class="item">
-                                        <img src="{{ asset($image) }}" alt="">
+                                        <img src="{{ asset('storage/'.$image) }}" alt="">
                                     </div>
                                 @empty
                                 @endforelse
@@ -48,7 +48,7 @@
                             <div class="gallery-thumb">
                                 @forelse(json_decode($car->images) as $image)
                                     <div class="item">
-                                        <img src="{{ asset($image) }}" alt="">
+                                        <img src="{{ asset('storage/'.$image) }}" alt="">
                                     </div>
                                 @empty
                                 @endforelse

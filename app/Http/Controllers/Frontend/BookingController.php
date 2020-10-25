@@ -22,10 +22,21 @@ class BookingController extends Controller
         return view('frontend.booking.confirm-booking', compact('selectedCar'));
     }
 
+    public function booking_confirmation($reference)
+    {
+        return view('frontend.booking.booking-confirmation');
+    }
+
     public function car_booking(Request $request)
     {
         $formData = $request->input('formData');
         $car = Car::where('slug', $request->car_slug)->first();
+
+        $trip_time = explode(', ', $request->trip_time);
+        $days = $trip_time[0][0];
+        $hours = $trip_time[1][0];
+
+        $trip_cost = $days * $car->daily_price + $hours * $car->hourly_price;
 
         $booking = Booking::create([
             'reference' => $request->book_ref,
@@ -37,6 +48,7 @@ class BookingController extends Controller
             'dropoff_time' => $request->dropoff_time,
             'service_type' => $request->service_type,
             'trip_time' => $request->trip_time,
+            'trip_cost' => $request->trip_cost,
             'car_id' => $car->id,
             'customer_id' => auth()->id()
         ]);

@@ -785,38 +785,42 @@ $(document).ready(function () {
 							$("#ride-bbtn").attr('disabled','disabled');
 						},
 						success: function(result){
+						    console.log(result);
 							if(result==1){
 								alert("Thank you for booking. We will get in touch with you soon!");
-								$("#ride-bbtn").text("Email Sent").addClass('success');
-								$("#ride-bbtn").removeAttr('disabled');
-								$("#ride-bbtn").removeClass('wait');
-								$('#rider-info')[0].reset();
-								//Delete Booking Saved Data From Local Storage
-								sessionStorage.removeItem("book_ref");
-								sessionStorage.removeItem("start_loc");
-								sessionStorage.removeItem("end_loc");
-								sessionStorage.removeItem("pickup_date");
-								sessionStorage.removeItem("pickup_time");
-								sessionStorage.removeItem("dropoff_date");
-								sessionStorage.removeItem("dropoff_date");
-								sessionStorage.removeItem("dropoff_time");
-								sessionStorage.removeItem("service_type");
-								sessionStorage.removeItem("trip_time");
-								sessionStorage.removeItem("selected_car");
+                                window.location.replace('/booking/booking-confirmation/'.sessionStorage.removeItem("book_ref"));
+								// $("#ride-bbtn").text("Booking Placed").addClass('success');
+								// $("#ride-bbtn").removeAttr('disabled');
+								// $("#ride-bbtn").removeClass('wait');
+								// $('#rider-info')[0].reset();
+								// //Delete Booking Saved Data From Local Storage
+								// sessionStorage.removeItem("book_ref");
+								// sessionStorage.removeItem("start_loc");
+								// sessionStorage.removeItem("end_loc");
+								// sessionStorage.removeItem("pickup_date");
+								// sessionStorage.removeItem("pickup_time");
+								// sessionStorage.removeItem("dropoff_date");
+								// sessionStorage.removeItem("dropoff_date");
+								// sessionStorage.removeItem("dropoff_time");
+								// sessionStorage.removeItem("service_type");
+								// sessionStorage.removeItem("trip_time");
+								// sessionStorage.removeItem("selected_car");
+                                //
+								// $('.booking-summary .book-ref').text('Not Available');
+								// $('.booking-summary .service_type').text('Not Available');
+								// $('.booking-summary .startup_loc').text('Not Available');
+								// $('.booking-summary .end_loc').text('Not Available');
+								// $('.booking-summary .pick_date').text('Not Available');
+								// $('.booking-summary .pick_time').text('Not Available');
+								// $('.booking-summary .drop_date').text('Not Available');
+								// $('.booking-summary .drop_time').text('Not Available');
+								// $('.booking-summary .trip_est').text('Not Available');
+								// $('.booking-summary .ride_car').text('Not Available');
 
-								$('.booking-summary .book-ref').text('Not Available');
-								$('.booking-summary .service_type').text('Not Available');
-								$('.booking-summary .startup_loc').text('Not Available');
-								$('.booking-summary .end_loc').text('Not Available');
-								$('.booking-summary .pick_date').text('Not Available');
-								$('.booking-summary .pick_time').text('Not Available');
-								$('.booking-summary .drop_date').text('Not Available');
-								$('.booking-summary .drop_time').text('Not Available');
-								$('.booking-summary .trip_est').text('Not Available');
-								$('.booking-summary .ride_car').text('Not Available');
+
 							}else{
 								alert("Something went wrong. Please check your entries and try again");
-								$("#ride-bbtn").text("Email Failed").addClass('fail');
+								$("#ride-bbtn").text("Booking Failed").addClass('fail');
 								$("#ride-bbtn").removeAttr('disabled');
 								$("#ride-bbtn").removeClass('wait');
 							}
@@ -827,5 +831,7 @@ $(document).ready(function () {
 			}
 		});
 	}
+
+    $('#confirmed_book_ref').text(sessionStorage.getItem('book_ref'));
 
 });

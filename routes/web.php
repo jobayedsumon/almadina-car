@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,6 +13,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/admin-work', function () {
+
+    $exitCode = Artisan::call('storage:link', [] );
+    echo $exitCode; // 0 exit code for no errors.
+
+});
 
 //FRONTEND ROUTS
 
@@ -39,7 +47,7 @@ Route::prefix('/booking')->group(function () {
 
     Route::get('/car-booking', 'Frontend\BookingController@booking_form')->name('booking-form');
 
-    Route::get('/booking-confirmation', 'Frontend\FrontendController@booking_confirmation')->name('booking-confirmation');
+    Route::get('/booking-confirmation/reference', 'Frontend\BookingController@booking_confirmation')->name('booking-confirmation');
 
     Route::get('/confirm-booking/{slug}', 'Frontend\BookingController@confirm_booking');
 

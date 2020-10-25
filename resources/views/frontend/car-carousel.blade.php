@@ -1,5 +1,5 @@
 @php
-    $files = scandir('storage/banner/slider', SCANDIR_SORT_DESCENDING);
+    $files = scandir(public_path().'/storage/banner/slider', SCANDIR_SORT_DESCENDING);
     $newest_file = $files[0];
     $newest_file = $files[0];
 @endphp
@@ -14,7 +14,7 @@
 
             @forelse(\App\Slider::all() as $slider)
             <div class="fleet-item">
-                <a href="{{ route('car-details', $slider->car->slug) }}"><img src="{{ asset(json_decode($slider->car->images)[0]) }}" alt=""/></a>
+                <a href="{{ route('car-details', $slider->car->slug) }}"><img src="{{ asset('storage/'.json_decode($slider->car->images)[0]) }}" alt=""/></a>
                 <div class="fleet-inner">
                     <h4>{{ $slider->car->name }}</h4>
                     <ul>

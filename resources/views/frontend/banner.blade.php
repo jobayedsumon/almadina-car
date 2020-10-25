@@ -1,5 +1,5 @@
 @php
-    $files = scandir('storage/banner/main', SCANDIR_SORT_DESCENDING);
+    $files = scandir(public_path().'/storage/banner/main', SCANDIR_SORT_DESCENDING);
     $newest_file = $files[0];
     $newest_file = $files[0];
 @endphp

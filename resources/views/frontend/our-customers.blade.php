@@ -12,7 +12,7 @@
 
                     @forelse(\App\CorporateClient::all() as $client)
                     <a target="_blank" href="{{ $client->link }}">
-                        <img src="{{ asset($client->image) }}" alt="" />
+                        <img src="{{ asset('storage/'.$client->image) }}" alt="" />
                     </a>
                     @empty
                     @endforelse
