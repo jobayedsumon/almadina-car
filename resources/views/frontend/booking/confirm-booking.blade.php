@@ -95,7 +95,7 @@
                             </ul>
                             <div class="fare-box">
                                 <strong>Trip Estimation</strong>
-                                <span class="trip_est">{{  }}</span>
+                                <span class="trip_est"></span>
                             </div>
                         </div>
                     </div>

@@ -39,7 +39,7 @@
                             <span class="fas fa-check"></span>
                             <h3>Booking Successfull!</h3>
                             <p>Your car booking at Almadina Car has been  placed Successfully!. Your booking reference no. is #
-                                <span style="border: none" id="confirmed_book_ref"></span> .</p>
+                                <span style="border: none">{{ $booking->reference }}</span></p>
                             <a href="/"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Back to Home</a>
                         </div>
                     </div>
@@ -48,31 +48,31 @@
                         <div class="booking-summary">
                             <h3>Booking Summary</h3>
                             <ul class="booking-info">
-                                <li><span>Booking Reference: </span><div class="book-ref"></div></li>
+                                <li><span>Booking Reference: </span><div>{{ $booking->reference }}</div></li>
                                 <li><span>Journey Type:</span>
-                                    <div class="service_type">Select Service Type</div></li>
+                                    <div class="">{{ $booking->service_type }}</div></li>
                                 <li><span>Selected Ride Car:</span>
-                                    <div class="ride_car">Select Ride Car</div></li>
+                                    <div class="">{{ $booking->car->name }}</div></li>
                             </ul>
                             <div class="journey-info">
-                                <h4	class="service_type">Select Service Type</h4>
+                                <h4	class="">{{ $booking->service_type }}</h4>
                             </div>
                             <ul class="service-info">
-                                <li><span>From: </span><div class="startup_loc info-outer">Enter Startup Location</div></li>
-                                <li><span>To: </span><div class="end_loc info-outer">Enter Destination</div></li>
-                                <li><span>Pickup Date: </span><div class="pick_date info-outer">Enter Pickup Date</div></li>
-                                <li><span>Pickup Time: </span><div class="pick_time info-outer">Enter Pickup Time</div></li>
-                                <li><span>Dropoff Date: </span><div class="drop_date info-outer">Enter Dropoff Date</div></li>
-                                <li><span>Dropoff Time: </span><div class="drop_time info-outer">Enter Dropoff Time</div></li>
+                                <li><span>From: </span><div class=" info-outer">{{ $booking->start_location }}</div></li>
+                                <li><span>To: </span><div class=" info-outer">{{ $booking->end_location }}</div></li>
+                                <li><span>Pickup Date: </span><div class=" info-outer">{{ $booking->pickup_date }}</div></li>
+                                <li><span>Pickup Time: </span><div class=" info-outer">{{ $booking->pickup_time }}</div></li>
+                                <li><span>Dropoff Date: </span><div class=" info-outer">{{ $booking->dropoff_date }}</div></li>
+                                <li><span>Dropoff Time: </span><div class=" info-outer">{{ $booking->dropoff_time }}</div></li>
                             </ul>
                             <div class="fare-box">
                                 <strong>Trip Estimation</strong>
-                                <span class="trip_est">Not Available</span>
+                                <span class="">{{ $booking->trip_time }}</span>
                             </div>
 
                             <div class="fare-box">
                                 <strong>Trip Cost</strong>
-                                <span class="trip_cost">Not Available</span>
+                                <span class="">{{ $booking->trip_cost }}</span>
                             </div>
                         </div>
                     </div>

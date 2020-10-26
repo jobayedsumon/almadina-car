@@ -47,7 +47,7 @@ Route::prefix('/booking')->group(function () {
 
     Route::get('/car-booking', 'Frontend\BookingController@booking_form')->name('booking-form');
 
-    Route::get('/booking-confirmation/reference', 'Frontend\BookingController@booking_confirmation')->name('booking-confirmation');
+    Route::get('/booking-confirmation/{reference}', 'Frontend\BookingController@booking_confirmation')->name('booking-confirmation');
 
     Route::get('/confirm-booking/{slug}', 'Frontend\BookingController@confirm_booking');
 

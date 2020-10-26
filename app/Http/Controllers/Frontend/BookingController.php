@@ -24,7 +24,8 @@ class BookingController extends Controller
 
     public function booking_confirmation($reference)
     {
-        return view('frontend.booking.booking-confirmation');
+        $booking = Booking::where('reference', $reference)->first();
+        return view('frontend.booking.booking-confirmation', compact('booking'));
     }
 
     public function car_booking(Request $request)
@@ -48,7 +49,7 @@ class BookingController extends Controller
             'dropoff_time' => $request->dropoff_time,
             'service_type' => $request->service_type,
             'trip_time' => $request->trip_time,
-            'trip_cost' => $request->trip_cost,
+            'trip_cost' => $trip_cost,
             'car_id' => $car->id,
             'customer_id' => auth()->id()
         ]);
@@ -59,7 +60,7 @@ class BookingController extends Controller
             ]);
         }
 
-        return 1;
+        return $booking->reference;
 
     }
 
